@@ -1,0 +1,105 @@
+
+/*--perso*/
+$tc_focus_border: #0036ff;
+$tc_focus_shadow: #6fb5f1;
+$tc_focus_bg: #595b5b;
+/*--*/
+
+$bootstrap-sass-asset-helper: true;
+
+$font-family-sans-serif:	"Source Sans Pro", Helvetica, Arial, sans-serif;
+$font-family-monospace:		'Source Code Pro', Courier, monospace;
+$font-family-base:			$font-family-sans-serif;
+
+$font-size-base:			14px;
+$font-size-large:			15px;
+$font-size-small:			12px;
+
+$font-size-h1:				floor(($font-size-base * 2.45)); // ~34px
+$font-size-h2:				floor(($font-size-base * 2)); // 28px
+$font-size-h3:				ceil(($font-size-base * 1.55)); // ~21px
+$font-size-h4:				ceil(($font-size-base * 1.10)); // ~15px
+
+$line-height-base:			1.929;
+$line-height-large:			1.42857;
+$line-height-small:			1.75;
+
+$padding-base-vertical:     0px;
+$padding-base-horizontal:   0.563rem;
+$padding-large-vertical:    8px;
+$padding-large-horizontal:  16px;
+$padding-small-vertical:    $padding-base-vertical;
+$padding-small-horizontal:  $padding-base-horizontal;
+$padding-xs-vertical:		$padding-base-vertical;
+$padding-xs-horizontal:		$padding-base-horizontal;
+
+$gray-light:				#4A4D4E;
+
+$body-bg:					darken($gray-light, 4.5%);
+
+$text-color:				#F0F1F1;
+
+$text-muted:				lighten($gray-light, 15%);
+
+$input-bg:					#454646;
+$input-bg-disabled:			$input-bg;
+$input-color:				#c6c8c8;
+$input-color-placeholder:	$text-muted;
+$input-border:				#333434;
+$input-height-base:         29px;
+$input-height-large:        39px;
+$input-height-small:        23px;
+
+$cursor-disabled:			default;
+
+$brand-primary:				#DF691A;
+$brand-success:				#5cb85c;
+$brand-info:				#5bc0de;
+$brand-warning:				#f0ad4e;
+$brand-danger:				#d9534f;
+
+$btn-default-color:         $input-color;
+$btn-default-bg:			$gray-light;
+
+/*--perso*/
+$tc_dark_border:			12.4%;
+$tc_but_bg:					$btn-default-bg;
+$tc_but_border:				darken($btn-default-bg, $tc_dark_border);
+$tc_but_shadow:				lighten($btn-default-bg, 8%);
+/*--*/
+
+$btn-default-border:        $tc_but_border;
+
+$btn-primary-border:        darken($brand-primary, $tc_dark_border);
+$btn-success-border:        darken($brand-success, $tc_dark_border);
+$btn-info-border:           darken($brand-info, $tc_dark_border);
+$btn-warning-border:        darken($brand-warning, $tc_dark_border);
+$btn-danger-border:         darken($brand-danger, $tc_dark_border);
+
+$table-bg-hover:			lighten($gray-light, 3.5%);
+
+$list-group-border:						$btn-default-border;
+$list-group-active-bg:					darken($btn-default-bg, 13.7%);
+$list-group-active-color:				white;
+$list-group-active-bg:					$btn-default-border;
+$list-group-active-text-color:			white;
+$list-group-disabled-color:				$text-color;
+$list-group-disabled-bg:				$gray-light;
+
+$pager-border-radius:					0px;
+
+$pagination-color:						$btn-default-color;
+$pagination-bg:							$btn-default-bg;
+$pagination-border:						$btn-default-border;
+
+$pagination-hover-color:				$text-color !default;
+$pagination-hover-bg:					$table-bg-hover !default;
+$pagination-hover-border:				$pagination-border;
+
+$pagination-active-color:				white;
+$pagination-active-bg:					$brand-primary !default;
+$pagination-active-border:				$btn-primary-border;
+
+$pagination-disabled-color:				$list-group-disabled-color;
+$pagination-disabled-bg:				$list-group-disabled-bg;
+$pagination-disabled-border:			$btn-default-border;
