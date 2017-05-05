@@ -5,11 +5,13 @@ $tc_focus_shadow: #6fb5f1;
 $tc_focus_bg: #595b5b;
 /*--*/
 
-$bootstrap-sass-asset-helper: true;
+/*$bootstrap-sass-asset-helper: true;*/
 
 $font-family-sans-serif:	"Source Sans Pro", Helvetica, Arial, sans-serif;
 $font-family-monospace:		'Source Code Pro', Courier, monospace;
 $font-family-base:			$font-family-sans-serif;
+
+$icon-font-path:			"../bootstrap/fonts/bootstrap/";
 
 $font-size-base:			14px;
 $font-size-large:			15px;

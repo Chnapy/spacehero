@@ -1,4 +1,15 @@
 
+@function getBorderColor($bg) {
+	$darken: 0;
+	@if $bg == $btn-default-bg {
+		$darken:	$tc_dark_border;
+	} @else {
+		$darken:	$tc_darker_border;
+	}
+
+	@return darken($bg, $darken);
+}
+
 @mixin disabled {
     opacity: 0.3;
     cursor: default;
@@ -7,27 +18,20 @@
 
 @mixin focused {
 	/*border: 1px solid $tc_focus_border !important;*/
-	box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px $tc_focus_shadow;
+	@include box-shadow(inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px $tc_focus_shadow);
 	outline: 0;
 	z-index: 2;
 }
 
 @mixin relief($bg) {
-	box-shadow: inset 0 1px rgba(white, 0.1);
-
-	$darken: 0;
-	@if $bg == $btn-default-bg {
-		$darken:	$tc_dark_border;
-	} @else {
-		$darken:	$tc_darker_border;
-	}
-
-	border: 1px solid darken($bg, $darken) !important;
+	background: $bg;
+	@include box-shadow(inset 0 1px rgba(white, 0.1));
+	border: 1px solid getBorderColor($bg) !important;
 }
 
 @mixin btnColor($bg) {
 	@include relief($bg);
-	text-shadow: 0 -1px darken($bg, $tc_dark_border);
+	text-shadow: 0 -1px getBorderColor($bg);
 
 	&:focus {
 		background: $bg;
@@ -39,9 +43,9 @@
 	}
 
 	&:active {
-		border: 1px solid darken($bg, $tc_dark_border);
+		border: 1px solid getBorderColor($bg);
 		background: darken($bg, 13.7%);
-		box-shadow: inset 0 1px rgba(0,0,0,0.05) !important;
+		@include box-shadow(inset 0 1px rgba(0,0,0,0.05) !important);
 	}
 }
 
@@ -85,8 +89,7 @@ body {
 	position: relative;
     display: inline-block;
     vertical-align: top;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    @include box-sizing(border-box);
     background-clip: padding-box;
     margin: 0;
 	font-weight: 600;
@@ -96,7 +99,7 @@ body {
     text-decoration: none;
     letter-spacing: 0;
     vertical-align: top;
-    box-shadow: inset 0 1px transparent;
+    @include box-shadow(inset 0 1px transparent);
 	border-width: 1px;
 	border-style: solid;
 
@@ -141,7 +144,7 @@ body {
 		&:not(:hover):not(:focus) {
 			background: none;
 			border-color: transparent !important;
-			box-shadow: none;
+			@include box-shadow(none);
 		}
 	}
 
@@ -160,10 +163,7 @@ body {
 	display: inline-block;
 	vertical-align: top;
 	cursor: default;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+	@include user-select(none);
 	padding-top: ($line-height-computed - 16px) / 2;
 
 	input[type="checkbox"], input[type="radio"] {
@@ -185,10 +185,7 @@ body {
 		display: inline-block;
 		vertical-align: top;
 		cursor: default;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
+		@include user-select(none);
 		margin-right: 4px;
 
 		&::after, &::before {
@@ -204,7 +201,7 @@ body {
 		}
 
 		&::after {
-			box-sizing: content-box;
+			@include box-sizing(content-box);
 			opacity: 0;
 		}
 	}
@@ -216,7 +213,7 @@ body {
 	input[type="checkbox"]:active + .checkbox-box:before, input[type="radio"]:active + .radio-box:before {
 		border: 1px solid darken($tc_but_bg, $tc_dark_border);
 		background: darken($tc_but_bg, 13.7%);
-		box-shadow: inset 0 1px rgba(0,0,0,0.05);
+		@include box-shadow(inset 0 1px rgba(0,0,0,0.05));
 	}
 
 	input[type="checkbox"]:focus + .checkbox-box::before, input[type="radio"]:focus + .radio-box::before {
@@ -302,7 +299,7 @@ body {
 				height: 0.313rem;
 				background: $input-color;
 				border: 1px solid rgba(0,0,0,0.05);
-				box-shadow: 0 1px rgba(255,255,255,0.1);
+				@include box-shadow(0 1px rgba(255,255,255,0.1));
 				-webkit-transform: none;
 				-ms-transform: none;
 				transform: none;
@@ -350,16 +347,16 @@ body {
 .form-control {
 	letter-spacing: 0;
 	padding: 0 0.563rem;
-	box-shadow: inset 0 1px rgba(0,0,0,0.05);
+	@include box-shadow(inset 0 1px rgba(0,0,0,0.05));
 	vertical-align: top;
-	transition-duration: 0s;
+	@include transition-duration(0s);
 
 	&:focus {
 		@include focused;
 
 		&:not(select) {
 			background: $tc_focus_bg;
-			box-shadow: 0 0 0 2px $tc_focus_shadow !important;
+			@include box-shadow(0 0 0 2px $tc_focus_shadow !important);
 			color: white;
 		}
 	}
@@ -399,7 +396,11 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 			color: darken($nav-tabs-active-link-hover-color, 5%);
 			background-color: darken($nav-tabs-active-link-hover-bg, 5%);
 			border: 1px solid $nav-tabs-border-color;
-			box-shadow: inset 0 1px darken($tc_but_shadow, 5%);
+			@include box-shadow(inset 0 1px darken($tc_but_shadow, 5%));
+
+			&:hover {
+				background-color: darken($nav-tabs-active-link-hover-bg, 3%);
+			}
 		}
 
 		> a {
@@ -410,7 +411,7 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 		&.active > a {
 
 			&, &:hover, &:focus {
-				box-shadow: inset 0 1px $tc_but_shadow;
+				@include box-shadow(inset 0 1px $tc_but_shadow);
 				/*text-shadow: 0 -1px 0 $tc_but_border;*/
 				text-shadow: 0.25px 0px 0px $nav-tabs-active-link-hover-color;
 			}
@@ -483,7 +484,7 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 }
 
 .well {
-	@extend .relief;
+	@include relief($well-bg);
 }
 
 .breadcrumb {
@@ -494,7 +495,7 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 	@extend .relief;
 
 	> .progress-bar {
-		box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+		@include box-shadow(inset 0 1px rgba(255, 255, 255, 0.1));
 	}
 }
 
@@ -503,10 +504,10 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 }
 
 .panel {
-	@extend .relief;
+	@include relief($panel-bg);
 
 	> .panel-heading {
-		box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+		@include box-shadow(inset 0 1px rgba(255, 255, 255, 0.1));
 	}
 }
 
@@ -600,4 +601,61 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 .text-info,
 .text-info:hover {
 	color: $brand-info;
+}
+
+::-webkit-scrollbar {
+	width: 17px;
+	background: rgba(black, 0.1);
+}
+
+::-webkit-scrollbar-button {
+	height: 17px;
+
+	&:vertical {
+		&:decrement {
+			border-top: 0px !important;
+		}
+		&:increment {
+			border-bottom: 0px !important;
+		}
+	}
+	&:horizontal {
+		&:decrement {
+			border-left: 0px !important;
+		}
+		&:increment {
+			border-right: 0px !important;
+		}
+	}
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track-piece {
+}
+
+::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-corner {
+	background: darken($btn-default-bg, $tc_dark_border);
+}
+
+::-webkit-resizer {
+	@extend .relief;
+	/*@include btnColor($btn-default-bg);*/
+	border-right: none !important;
+	border-bottom: none !important;
+	@include box-shadow(inset 0px -2px rgba(white, 0.2));
+}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-button {
+	@include btnColor($btn-default-bg);
+	&:vertical {
+		border-right: 0px !important;
+	}
+	&:horizontal {
+		border-bottom: 0px !important;
+	}
 }
