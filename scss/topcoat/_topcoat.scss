@@ -1,4 +1,65 @@
 
+@mixin disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+}
+
+@mixin focused {
+	/*border: 1px solid $tc_focus_border !important;*/
+	box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px $tc_focus_shadow;
+	outline: 0;
+	z-index: 2;
+}
+
+@mixin relief($bg) {
+	box-shadow: inset 0 1px rgba(white, 0.1);
+
+	$darken: 0;
+	@if $bg == $btn-default-bg {
+		$darken:	$tc_dark_border;
+	} @else {
+		$darken:	$tc_darker_border;
+	}
+
+	border: 1px solid darken($bg, $darken) !important;
+}
+
+@mixin btnColor($bg) {
+	@include relief($bg);
+	text-shadow: 0 -1px darken($bg, $tc_dark_border);
+
+	&:focus {
+		background: $bg;
+		@include focused;
+	}
+
+	&:hover {
+		background: lighten($bg, 3.5%);
+	}
+
+	&:active {
+		border: 1px solid darken($bg, $tc_dark_border);
+		background: darken($bg, 13.7%);
+		box-shadow: inset 0 1px rgba(0,0,0,0.05) !important;
+	}
+}
+
+.focused {
+	@include focused;
+}
+
+.disabled {
+	@include disabled;
+}
+
+.relief {
+	@include relief($btn-default-bg);
+}
+
+.relief-primary {
+	@include relief($brand-primary);
+}
 
 html {
 	font-size: 100%;
@@ -35,67 +96,61 @@ body {
     text-decoration: none;
     letter-spacing: 0;
     vertical-align: top;
-    box-shadow: inset 0 1px transparent;	//#737373
+    box-shadow: inset 0 1px transparent;
 	border-width: 1px;
 	border-style: solid;
 
-	&.btn-sm {
+	&-sm {
 		font-weight: normal;
 		padding: 0 0.563rem;
 	}
 
-	&.btn-xs {
+	&-xs {
 		font-weight: normal;
 		padding: 0 0.363rem;
 		font-size: 10px;
 	}
 
-	@mixin btnColor($bg) {
-		text-shadow: 0 -1px darken($bg, $tc_dark_border);
-		box-shadow: inset 0 1px lighten($bg, 8%);
-		border: 1px solid darken($bg, $tc_dark_border);
-
-		&:focus {
-			background: $bg;
-		}
-
-		&:hover {
-			background: lighten($bg, 3.5%);
-		}
-
-		&:active {
-			border: 1px solid darken($bg, $tc_dark_border);
-			background: darken($bg, 13.7%);
-		}
-	}
-
-	&.btn-default {
+	&-default {
 		@include btnColor($btn-default-bg);
-		/*color: $input-color !important;*/
 	}
 
-	&.btn-primary {
-		@include btnColor($btn-primary-bg);
+	&-primary {
+		@include btnColor($brand-primary);
 	}
 
-	&.btn-success {
-		@include btnColor($btn-success-bg);
+	&-success {
+		@include btnColor($brand-success);
 	}
 
-	&.btn-info {
-		@include btnColor($btn-info-bg);
+	&-info {
+		@include btnColor($brand-info);
 	}
 
-	&.btn-warning {
-		@include btnColor($btn-warning-bg);
+	&-warning {
+		@include btnColor($brand-warning);
 	}
 
-	&.btn-danger {
-		@include btnColor($btn-danger-bg);
+	&-danger {
+		@include btnColor($brand-danger);
 	}
 
-	&:active {
-		box-shadow: inset 0 1px rgba(0,0,0,0.05) !important;
+	&-link {
+		@include btnColor($btn-default-bg);
+
+		&:not(:hover):not(:focus) {
+			background: none;
+			border-color: transparent !important;
+			box-shadow: none;
+		}
+	}
+
+	&:focus {
+		@include focused;
+	}
+
+	&[disabled] {
+		@include disabled;
 	}
 }
 
@@ -144,8 +199,8 @@ body {
 		&::before {
 			/*background: #595b5b;*/
 			background: $tc_but_bg;
-			border: 1px solid $tc_but_border;
-			box-shadow: inset 0 1px $tc_but_shadow;
+			z-index: 0 !important;
+			@extend .relief;
 		}
 
 		&::after {
@@ -162,6 +217,14 @@ body {
 		border: 1px solid darken($tc_but_bg, $tc_dark_border);
 		background: darken($tc_but_bg, 13.7%);
 		box-shadow: inset 0 1px rgba(0,0,0,0.05);
+	}
+
+	input[type="checkbox"]:focus + .checkbox-box::before, input[type="radio"]:focus + .radio-box::before {
+		@include focused;
+	}
+
+	input[type="checkbox"]:disabled + .checkbox-box, input[type="radio"]:disabled + .radio-box {
+		@include disabled;
 	}
 }
 
@@ -285,32 +348,24 @@ body {
 }
 
 .form-control {
-
-	/*height: auto;*/
 	letter-spacing: 0;
 	padding: 0 0.563rem;
 	box-shadow: inset 0 1px rgba(0,0,0,0.05);
 	vertical-align: top;
-	/*border-radius: 4px;*/
-	/*	line-height: 1.688rem;
-		font-size: 0.875rem;*/
 	transition-duration: 0s;
 
-	&.input-sm {
-		/*		line-height: 1.313rem;
-				font-size: 12px;*/
+	&:focus {
+		@include focused;
+
+		&:not(select) {
+			background: $tc_focus_bg;
+			box-shadow: 0 0 0 2px $tc_focus_shadow !important;
+			color: white;
+		}
 	}
 
-	&.input-lg {
-		/*padding: 8px 16px;*/
-		/*		font-size: 15px;
-				line-height: 1.42857rem;*/
-	}
-
-	&:not(select):focus {
-		background: $tc_focus_bg;
-		box-shadow: 0 0 0 2px $tc_focus_shadow !important;
-		color: white;
+	&[disabled] {
+		@include disabled;
 	}
 }
 
@@ -320,49 +375,229 @@ textarea.form-control {
 
 select.form-control {
 	background: $tc_but_bg;
-    border: 1px solid $tc_but_border;
-	box-shadow: inset 0 1px $tc_but_shadow;
+    @extend .relief;
     color: white;
     text-shadow: 0 -1px 0 $tc_but_border;
     padding: 3px 20px 4px 8px;
 }
 
-/*.btn-sm, .form-control {
-	height: 29px;
-}
-
-.btn-xs, .input-sm {
-	height: 23px;
-}
-
-.btn, .input-lg {
-	height: 39px;
-}*/
-
-.btn:focus, 
-.checkbox input[type="checkbox"]:focus + .checkbox-box::before, 
-.radio input[type="radio"]:focus + .radio-box::before, 
-.form-control:focus {
-	border: 1px solid $tc_focus_border;
-	box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px $tc_focus_shadow;
-	outline: 0;
-}
-
-.disabled,
-.btn.disabled, .btn[disabled], 
-.form-control[disabled], 
-fieldset[disabled] .btn, 
-fieldset[disabled] .form-control,
-.checkbox input[type="checkbox"]:disabled + .checkbox-box,
-.radio input[type="radio"]:disabled + .radio-box {
-    opacity: 0.3;
-    cursor: default;
-	/*cursor: not-allowed;*/
-    pointer-events: none;
+fieldset[disabled] .btn, fieldset[disabled] .form-control {
+	@include disabled;
 }
 
 .has-success, .has-warning, .has-error {
 	.form-control, .form-control:focus {
 		border-width: 1px;
 	}
+}
+
+.nav-tabs {
+
+	> li {
+
+		&:not(.active) > a {
+			color: darken($nav-tabs-active-link-hover-color, 5%);
+			background-color: darken($nav-tabs-active-link-hover-bg, 5%);
+			border: 1px solid $nav-tabs-border-color;
+			box-shadow: inset 0 1px darken($tc_but_shadow, 5%);
+		}
+
+		> a {
+			padding: 0px 0.563rem;
+			cursor: default;
+		}
+
+		&.active > a {
+
+			&, &:hover, &:focus {
+				box-shadow: inset 0 1px $tc_but_shadow;
+				/*text-shadow: 0 -1px 0 $tc_but_border;*/
+				text-shadow: 0.25px 0px 0px $nav-tabs-active-link-hover-color;
+			}
+		}
+	}
+
+	+ .tab-content {
+		background-color: $nav-tabs-active-link-hover-bg;
+		border: 1px solid $nav-tabs-border-color;
+		border-top: none;
+	}
+}
+
+.navbar {
+	&.navbar-default {
+		@extend .relief;
+		text-shadow: 0 -1px 0 $tc_but_border;
+	}
+
+	&.navbar-inverse {
+		@extend .relief-primary;
+		text-shadow: 0 -1px 0 darken($btn-primary-bg, $tc_dark_border);
+	}
+
+	&.navbar-fixed-top, &.navbar-fixed-bottom {
+		border-left: none;
+		border-right: none;
+		&.navbar-fixed-top {
+			border-top: none;
+		}
+		&.navbar-fixed-bottom {
+			border-bottom: none;
+		}
+	}
+}
+
+.list-group > .list-group-item:not(.active):not(.disabled) {
+	@include btnColor($btn-default-bg);
+
+	&:focus {
+		@include focused;
+	}
+}
+
+.dropdown-menu {
+	padding: 0;
+
+	> li > a {
+		@include btnColor($btn-default-bg);
+		border-left: none !important;
+		border-right: none !important;
+		border-top-width: 0px !important;
+	}
+
+	> .divider + li > a {
+		border-top-width: 1px !important;
+	}
+
+	> li:last-child > a {
+		border-bottom: none;
+	}
+
+	.divider {
+		margin: 2px 0;
+	}
+}
+
+.pagination > li:not(.active):not(.disabled) > a {
+	@include btnColor($btn-default-bg);
+}
+
+.well {
+	@extend .relief;
+}
+
+.breadcrumb {
+	@extend .relief;
+}
+
+.progress {
+	@extend .relief;
+
+	> .progress-bar {
+		box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+	}
+}
+
+.jumbotron {
+	@extend .relief;
+}
+
+.panel {
+	@extend .relief;
+
+	> .panel-heading {
+		box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+	}
+}
+
+.modal-content {
+	@extend .relief;
+}
+
+.nav-pills > li {
+	&:not(.active) > a {
+		border: 1px solid transparent;
+
+		&:hover, &:focus {
+			/*@extend .relief;*/
+			@extend .btn-link;
+		}
+	}
+
+	&.active > a {
+		@include btnColor($brand-primary);
+	}
+}
+
+.pager li {
+	&:not(.disabled) {
+		> a, > span {
+			@include btnColor($btn-default-bg);
+		}
+	}
+
+	&.disabled {
+		> a, > span {
+			@include disabled;
+		}
+	}
+}
+
+.label, .alert {
+	border-radius: 0;
+
+	&-default {
+		@extend .relief;
+	}
+
+	&-primary {
+		@extend .relief-primary;
+	}
+
+	&-success {
+		@include relief($brand-success);
+	}
+
+	&-warning {
+		@include relief($brand-warning);
+	}
+
+	&-danger {
+		@include relief($brand-danger);
+	}
+
+	&-info {
+		@include relief($brand-info);
+	}
+}
+
+.alert {
+	.alert-link {
+		color: darken($brand-primary, 15%);
+	}
+}
+
+.text-primary,
+.text-primary:hover {
+	color: $link-color;
+}
+
+.text-success,
+.text-success:hover {
+	color: $brand-success;
+}
+
+.text-danger,
+.text-danger:hover {
+	color: $brand-danger;
+}
+
+.text-warning,
+.text-warning:hover {
+	color: $brand-warning;
+}
+
+.text-info,
+.text-info:hover {
+	color: $brand-info;
 }

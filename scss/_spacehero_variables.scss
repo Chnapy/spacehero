@@ -35,10 +35,16 @@ $padding-xs-horizontal:		$padding-base-horizontal;
 
 $gray-light:				#4A4D4E;
 
+$brand-primary:				#3F729B;
+$brand-success:				#5ab75c;
+$brand-info:				#4aafcd;
+$brand-warning:				#faa632;
+$brand-danger:				#da4f4a;
+
 $body-bg:					darken($gray-light, 4.5%);
 
 $text-color:				#F0F1F1;
-
+$link-color:				lighten($brand-primary, 20%);
 $text-muted:				lighten($gray-light, 15%);
 
 $input-bg:					#454646;
@@ -52,17 +58,12 @@ $input-height-small:        23px;
 
 $cursor-disabled:			default;
 
-$brand-primary:				#DF691A;
-$brand-success:				#5cb85c;
-$brand-info:				#5bc0de;
-$brand-warning:				#f0ad4e;
-$brand-danger:				#d9534f;
-
 $btn-default-color:         $input-color;
 $btn-default-bg:			$gray-light;
 
 /*--perso*/
 $tc_dark_border:			12.4%;
+$tc_darker_border:			25.4%;
 $tc_but_bg:					$btn-default-bg;
 $tc_but_border:				darken($btn-default-bg, $tc_dark_border);
 $tc_but_shadow:				lighten($btn-default-bg, 8%);
@@ -77,11 +78,30 @@ $btn-warning-border:        darken($brand-warning, $tc_dark_border);
 $btn-danger-border:         darken($brand-danger, $tc_dark_border);
 
 $table-bg-hover:			lighten($gray-light, 3.5%);
+$table-border-color:		none;
+
+$dropdown-bg:				$btn-default-bg;
+$dropdown-border:           $btn-default-border;
+$dropdown-fallback-border:	$dropdown-border;
+$dropdown-link-hover-bg:    lighten($dropdown-bg, 3.5%);;
+
+$navbar-default-bg:						$btn-default-bg;
+$navbar-default-border:					$btn-default-border;
+
+$navbar-inverse-bg:						$brand-primary;
+$navbar-inverse-border:                 $btn-primary-border;
+
+$nav-tabs-border-color:					$btn-default-border;
+$nav-tabs-link-hover-border-color:		$nav-tabs-border-color;
+$nav-tabs-active-link-hover-bg:             $btn-default-bg;
+$nav-tabs-active-link-hover-color:          $btn-default-color;
+$nav-tabs-active-link-hover-border-color:   $nav-tabs-border-color;
+$nav-disabled-link-color:				$input-color;
 
 $list-group-border:						$btn-default-border;
-$list-group-active-bg:					darken($btn-default-bg, 13.7%);
+$list-group-active-bg:					$brand-primary;
+$list-group-active-border:				none;
 $list-group-active-color:				white;
-$list-group-active-bg:					$btn-default-border;
 $list-group-active-text-color:			white;
 $list-group-disabled-color:				$text-color;
 $list-group-disabled-bg:				$gray-light;
@@ -103,3 +123,13 @@ $pagination-active-border:				$btn-primary-border;
 $pagination-disabled-color:				$list-group-disabled-color;
 $pagination-disabled-bg:				$list-group-disabled-bg;
 $pagination-disabled-border:			$btn-default-border;
+
+$panel-default-text:					white;
+$panel-default-heading-bg:				transparent;
+$panel-default-border:					$btn-default-bg;
+$panel-footer-bg:						$btn-default-bg;
+
+/*$modal-content-bg:						$panel-bg;
+$modal-header-border-color:				$panel-default-border;*/
+
+$badge-border-radius:					0px;

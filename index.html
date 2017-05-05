@@ -60,15 +60,7 @@
 
 			<div class="page-header" id="banner">
 				<div class="row">
-					<div class="col-lg-8 col-md-7 col-sm-6">
-						<h1>Spacehero</h1>
-						<p class="lead">Beyond the time</p>
-					</div>
-					<div class="col-lg-4 col-md-5 col-sm-6">
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-3 col-md-3 col-sm-4">
+					<div class="col-md-3 col-sm-4">
 						<div class="list-group table-of-contents">
 							<a class="list-group-item" href="#navbar">Navbar</a>
 							<a class="list-group-item active" href="#buttons">Buttons</a>
@@ -80,6 +72,14 @@
 							<a class="list-group-item" href="#progress-bars">Progress bars</a>
 							<a class="list-group-item" href="#containers">Containers</a>
 							<a class="list-group-item" href="#dialogs">Dialogs</a>
+						</div>
+					</div>
+					<div class="col-md-9 col-sm-8">
+						<div class="jumbotron text-center">
+							<h1>Spacehero</h1>
+							<img src="https://img.memesuper.com/9782ba2dcd343cecdb6be7e81414516d_dongs-everywhere-meme-everywhere-toy-story_565-313.jpeg"
+								 alt="Toy Story meme" class="img-thumbnail"/>
+							<p>Beyond the time</p>
 						</div>
 					</div>
 				</div>
@@ -192,8 +192,8 @@
 			<div class="bs-docs-section">
 				<div class="page-header">
 					<div class="row">
-						<div class="col-lg-12 t-head">
-							<h2 id="buttons">Buttons</h2>
+						<div class="col-lg-12">
+							<h1 id="buttons">Buttons</h1>
 						</div>
 					</div>
 				</div>
@@ -1240,7 +1240,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<hr/>
 
 			<footer>
@@ -1260,26 +1260,26 @@
 		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="bootstrap/javascripts/bootstrap.min.js"></script>
 		<script>
-								(function () {
-									$(window).scroll(function () {
-										var top = $(document).scrollTop();
-										$('.splash').css({
-											'background-position': '0px -' + (top / 3).toFixed(2) + 'px'
-										});
-										if (top > 50)
-											$('#home > .navbar').removeClass('navbar-transparent');
-										else
-											$('#home > .navbar').addClass('navbar-transparent');
-									});
+			(function () {
+				$(window).scroll(function () {
+					var top = $(document).scrollTop();
+					$('.splash').css({
+						'background-position': '0px -' + (top / 3).toFixed(2) + 'px'
+					});
+					if (top > 50)
+						$('#home > .navbar').removeClass('navbar-transparent');
+					else
+						$('#home > .navbar').addClass('navbar-transparent');
+				});
 
-									$("a[href='#']").click(function (e) {
-										e.preventDefault();
-									});
+				$("a[href='#']").click(function (e) {
+					e.preventDefault();
+				});
 
-									$('[data-toggle="popover"]').popover();
-									$('[data-toggle="tooltip"]').tooltip();
+				$('[data-toggle="popover"]').popover();
+				$('[data-toggle="tooltip"]').tooltip();
 
-								})();
+			})();
 		</script>
 	</body>
 </html>
