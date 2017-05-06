@@ -1,0 +1,89 @@
+
+$grid-rows:								12;
+$grid-gutter-height:					10;
+
+@mixin calc-grid-row($index, $class, $type) {
+	@if ($type == height) and ($index > 0) {
+		.row-#{$class}-#{$index} {
+			height: percentage(($index / $grid-rows));
+		}
+	}
+	@if ($type == vh) and ($index > 0) {
+		.row-#{$class}-vh-#{$index} {
+			height: $index / $grid-rows * 100 + 0vh;
+		}
+	}
+	@if ($type == push) and ($index > 0) {
+		.row-#{$class}-push-#{$index} {
+			top: percentage(($index / $grid-rows));
+		}
+	}
+	@if ($type == push) and ($index == 0) {
+		.row-#{$class}-push-0 {
+			top: auto;
+		}
+	}
+	@if ($type == pull) and ($index > 0) {
+		.row-#{$class}-pull-#{$index} {
+			bottom: percentage(($index / $grid-rows));
+		}
+	}
+	@if ($type == pull) and ($index == 0) {
+		.row-#{$class}-pull-0 {
+			bottom: auto;
+		}
+	}
+	@if ($type == offset) {
+		.row-#{$class}-offset-#{$index} {
+			margin-top: percentage(($index / $grid-rows));
+		}
+	}
+}
+
+@mixin loop-grid-rows($rows, $class, $type) {
+	@for $i from 0 through $rows {
+		@include calc-grid-row($i, $class, $type);
+	}
+}
+
+@mixin make-grid-rows($i: 1, $list: ".row-xs-#{$i}, .row-sm-#{$i}, .row-md-#{$i}, .row-lg-#{$i}") {
+	@for $i from (1 + 1) through $grid-rows {
+		$list: "#{$list}, .row-xs-#{$i}, .row-sm-#{$i}, .row-md-#{$i}, .row-lg-#{$i}";
+	}
+	#{$list} {
+		// Prevent columns from collapsing when empty
+		min-width: 1px;
+
+		&:not(.row):not(.container):not(.container-fluid) {
+			// Inner gutter via padding
+			padding-top:  ceil(($grid-gutter-height / 2));
+			padding-bottom: floor(($grid-gutter-height / 2));
+		}
+	}
+}
+
+@mixin make-grid-height($class) {
+	@include loop-grid-rows($grid-rows, $class, height);
+	@include loop-grid-rows($grid-rows, $class, pull);
+	@include loop-grid-rows($grid-rows, $class, push);
+	@include loop-grid-rows($grid-rows, $class, offset);
+	@include loop-grid-rows($grid-rows, $class, vh);
+}
+
+.game-container {
+	height: 100vh;
+}
+
+@include make-grid-height(xs);
+
+@media (min-width: $screen-sm-min) {
+	@include make-grid-height(sm);
+}
+
+@media (min-width: $screen-md-min) {
+	@include make-grid-height(md);
+}
+
+@media (min-width: $screen-lg-min) {
+	@include make-grid-height(lg);
+}
