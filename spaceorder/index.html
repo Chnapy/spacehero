@@ -6,64 +6,136 @@
 -->
 <html>
 	<head>
-		<title>TODO supply a title</title>
+		<title>Space Order</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+
 		<link rel="stylesheet" href="../css/spacehero.css"/>
 		<link rel="stylesheet" href="css/spaceorder.css"/>
 	</head>
 	<body>
-		<div class="container-fluid row-md-vh-12">
-			
-			<div class="row row-md-1">
-				
-				<div class="col-md-6 row-md-12 relief">
-					aaa
+		<div class="game-container">
+
+			<div id='mod-faction' class="row row-md-1 row-hnb row-vnb">
+
+				<div class="col-md-6 row-md-24 relief module">
+					<div class='faction relief-bloc' title='FactionNom'>
+						<span class='color-bloc relief-img' style='background: #5BC0DE'></span><!--
+						--><span class='relief-text'>FactionNom</span><!--
+						--></div>
+
+					<small class='small-caps'>Slogan qui tue !</small>
+
+					<div class='float-right'>
+						<span class='relief-bloc'>23/134 membres connectés</span>
+					</div>
 				</div>
-				
-				<div class="col-md-6 row-md-12 relief">
-					bbb
+
+				<div id='mod-resources' class="col-md-6 row-md-24 relief module">
+
+					<div class='player relief-bloc' title='Chnapy' style='border-left-color: #5BC0DE'>
+						<img class='relief-img' src='img/avatar/av1.png' alt='Avatar de Chnapy'/><!--
+						--><div class='relief-text'>Chnapy</div><!--
+						--></div>
+
+					<div class="float-right">
+
+						<div class="resource resource-brown" title="Main d'oeuvre">
+							<div class="resource-value">
+								<span class="resource-value-current">123</span>
+								<span class="resource-value-total">354</span><!--
+								--></div><!--
+							--><div class="resource-name">MO</div><!--
+							--></div>
+
+						<div class="resource resource-violet" title="Matériaux">
+							<div class="resource-value">
+								<span class="resource-value-current">276</span><!--
+								--></div><!--
+							--><div class="resource-name">MA</div><!--
+							--></div>
+
+						<div class="resource resource-green" title="Militaire">
+							<div class="resource-value">
+								<span class="resource-value-current">167</span>
+								<span class="resource-value-total">167</span><!--
+								--></div><!--
+							--><div class="resource-name">MI</div><!--
+							--></div>
+
+					</div>
 				</div>
-				
+
 			</div>
-			
-			<div class="row row-md-6">
-				
-				<div class="col-md-2 row-md-12 relief">
-					ccc
+
+			<div class="row row-md-12 row-hnb row-vnb">
+
+				<div id='mod-missions' class="col-md-2 row-md-24 relief module">
+
+					<div class="panel-group">
+
+						<div class="panel panel-default mission">
+
+							<div class="panel-heading">
+								<span class='mission-title'>
+									Titre de mission
+								</span>
+								<!--<h4 class="panel-title">-->
+								<!--									<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
+								<!--</a>-->
+								<!--</h4>-->
+								<div class='float-right'>
+									<div class='player relief-bloc reduced onhover' title='Toky' style='border-left-color: #5BC0DE'>
+										<img class='relief-img' src='img/avatar/av2.jpg' alt='Avatar de Toky'/><!--
+										--><div class='relief-text'>Toky</div><!--
+										--></div>
+									<span class='date'>3j</span>
+								</div>
+							</div>
+
+							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+								<div class="panel-body">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+					</div>
+
 				</div>
-				
-				<div class="col-md-8 row-md-12 relief">
+
+				<div id='mod-map' class="col-md-8 row-md-24 relief module">
 					ddd
 				</div>
-				
-				<div class="col-md-2 row-md-12 relief">
+
+				<div id='mod-hierarchy' class="col-md-2 row-md-24 relief module">
 					eee
 				</div>
-				
+
 			</div>
-			
-			<div class="row row-md-5">
-				
-				<div class="col-md-2 row-md-12 relief">
+
+			<div class="row row-md-11 row-hnb row-vnb">
+
+				<div id='mod-chat' class="col-md-2 row-md-24 relief module">
 					fff
 				</div>
-				
-				<div class="col-md-4 row-md-12 relief">
+
+				<div id='mod-infos' class="col-md-4 row-md-24 relief module">
 					ggg
 				</div>
-				
-				<div class="col-md-4 row-md-12 relief">
+
+				<div id='mod-actions' class="col-md-4 row-md-24 relief module">
 					hhh
 				</div>
-				
-				<div class="col-md-2 row-md-12 relief">
+
+				<div id='mod-notif' class="col-md-2 row-md-24 relief module">
 					iii
 				</div>
-				
+
 			</div>
-			
+
 		</div>
+
+		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="../bootstrap/javascripts/bootstrap.min.js"></script>
 	</body>
 </html>

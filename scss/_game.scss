@@ -1,7 +1,4 @@
 
-$grid-rows:								12;
-$grid-gutter-height:					10;
-
 @mixin calc-grid-row($index, $class, $type) {
 	@if ($type == height) and ($index > 0) {
 		.row-#{$class}-#{$index} {
@@ -51,13 +48,17 @@ $grid-gutter-height:					10;
 		$list: "#{$list}, .row-xs-#{$i}, .row-sm-#{$i}, .row-md-#{$i}, .row-lg-#{$i}";
 	}
 	#{$list} {
-		// Prevent columns from collapsing when empty
+		// Prevent rows from collapsing when empty
 		min-width: 1px;
 
 		&:not(.row):not(.container):not(.container-fluid) {
 			// Inner gutter via padding
 			padding-top:  ceil(($grid-gutter-height / 2));
 			padding-bottom: floor(($grid-gutter-height / 2));
+
+			/*			> * {
+							vertical-align: middle;
+						}*/
 		}
 	}
 }
@@ -70,20 +71,170 @@ $grid-gutter-height:					10;
 	@include loop-grid-rows($grid-rows, $class, vh);
 }
 
-.game-container {
-	height: 100vh;
+@mixin make-float($class: "") {
+	@if $class != "" {
+		$class: "-#{$class}";
+	}
+	#{".float#{$class}-right"} {
+		float: right !important;
+	}
+	#{".float#{$class}-left"} {
+		float: left !important;
+	}
+	#{".float#{$class}-none"} {
+		float: none !important;
+	}
 }
 
+@include make-grid-rows;
 @include make-grid-height(xs);
+@include make-float;
 
 @media (min-width: $screen-sm-min) {
 	@include make-grid-height(sm);
+	@include make-float(sm);
 }
 
 @media (min-width: $screen-md-min) {
 	@include make-grid-height(md);
+	@include make-float(md);
 }
 
 @media (min-width: $screen-lg-min) {
 	@include make-grid-height(lg);
+	@include make-float(lg);
+}
+
+.row-hnb {
+	#{".relief + .relief"} {
+		border-left: none;
+	}
+}
+
+#{".row + .row-vnb .relief"} {
+	border-top: none;
+}
+
+.small-caps {
+	font-variant: small-caps !important;
+}
+
+.game-container {
+	height: 100vh;
+	min-height: $line-height-computed * ($grid-rows - 1) + 0px;
+	max-height: 100vh;
+	@extend .container-fluid;
+	@extend .row-md-vh-24;
+}
+
+.module {
+	overflow: auto;
+}
+
+.resource {
+	vertical-align: middle;
+	margin: .1em;
+	cursor: help;
+	/*@include user-select(none);*/
+
+	@each $c in $resource-colors {
+		&.resource-#{nth($c, 1)} {
+			@include relief(nth($c, 2));
+		}
+	}
+
+	&, > .resource-value, > .resource-name {
+		display: inline;
+	}
+
+	> .resource-value, > .resource-name {
+		padding: {
+			left: 2px;
+			right: 2px;
+		}
+	}
+
+	> .resource-value {
+		background: rgba(black, .25);
+		> .resource-value-current {
+			font-weight: 600;
+		}
+
+		> .resource-value-total {
+			&::before {
+				content: '/';
+			}
+		}
+	}
+
+	> .resource-name {
+		font-weight: 600;
+	}
+}
+
+.relief-bloc {
+	@include relief;
+	margin: .1em;
+	font-variant: small-caps;
+	padding: 0 4px;
+	vertical-align: middle;
+	cursor: default;
+
+	&, > .relief-img, > .relief-text {
+		display: inline;
+	}
+
+	> .relief-img {
+		height: 1.25em;
+		width: auto;
+		margin-left: -4px;
+		vertical-align: text-top;
+		@include user-select(none);
+	}
+
+	> .relief-text {
+		padding-left: 4px;
+		font-variant: small-caps;
+		vertical-align: top;
+	}
+
+	&.reduced {
+		> .relief-text {
+			display: none;
+		}
+
+		&.onhover {
+			&:not(:hover) {
+				padding-right: 0;
+			}
+
+			&:hover {
+
+				> .relief-text {
+					display: inline;
+				}
+			}
+		}
+	}
+}
+
+.player {
+	border-left: 3px solid transparent;
+}
+
+.color-bloc {
+	display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+
+.faction {
+	> .color-bloc {
+		display: inline-block;
+		width: 1.25em;
+	}
+}
+
+.date {
+	color: rgba(black, 0.3);
 }

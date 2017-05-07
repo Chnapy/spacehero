@@ -1,137 +1,156 @@
 
 /*--perso*/
-$tc_focus_border: #0036ff;
-$tc_focus_shadow: #6fb5f1;
-$tc_focus_bg: #595b5b;
+$tc_focus_border: #0036ff !default;
+$tc_focus_shadow: #6fb5f1 !default;
+$tc_focus_bg: #595b5b !default;
 /*--*/
 
-/*$bootstrap-sass-asset-helper: true;*/
+$font-family-sans-serif:	"Source Sans Pro", Helvetica, Arial, sans-serif !default;
+$font-family-monospace:		'Source Code Pro', Courier, monospace !default;
+$font-family-base:			$font-family-sans-serif !default;
 
-$font-family-sans-serif:	"Source Sans Pro", Helvetica, Arial, sans-serif;
-$font-family-monospace:		'Source Code Pro', Courier, monospace;
-$font-family-base:			$font-family-sans-serif;
+$icon-font-path:			"../bootstrap/fonts/bootstrap/" !default;
 
-$icon-font-path:			"../bootstrap/fonts/bootstrap/";
+$font-size-base:			14px !default;
+$font-size-large:			15px !default;
+$font-size-small:			12px !default;
 
-$font-size-base:			14px;
-$font-size-large:			15px;
-$font-size-small:			12px;
+$font-size-h1:				floor(($font-size-base * 2.45)) !default; // ~34px
+$font-size-h2:				floor(($font-size-base * 2)) !default; // 28px
+$font-size-h3:				ceil(($font-size-base * 1.55)) !default; // ~21px
+$font-size-h4:				ceil(($font-size-base * 1.10)) !default; // ~15px
 
-$font-size-h1:				floor(($font-size-base * 2.45)); // ~34px
-$font-size-h2:				floor(($font-size-base * 2)); // 28px
-$font-size-h3:				ceil(($font-size-base * 1.55)); // ~21px
-$font-size-h4:				ceil(($font-size-base * 1.10)); // ~15px
+$line-height-base:			1.929 !default;
+$line-height-large:			1.42857 !default;
+$line-height-small:			1.75 !default;
 
-$line-height-base:			1.929;
-$line-height-large:			1.42857;
-$line-height-small:			1.75;
+$padding-base-vertical:     0px !default;
+$padding-base-horizontal:   0.563rem !default;
+$padding-large-vertical:    8px !default;
+$padding-large-horizontal:  16px !default;
+$padding-small-vertical:    $padding-base-vertical !default;
+$padding-small-horizontal:  $padding-base-horizontal !default;
+$padding-xs-vertical:		$padding-base-vertical !default;
+$padding-xs-horizontal:		$padding-base-horizontal !default;
 
-$padding-base-vertical:     0px;
-$padding-base-horizontal:   0.563rem;
-$padding-large-vertical:    8px;
-$padding-large-horizontal:  16px;
-$padding-small-vertical:    $padding-base-vertical;
-$padding-small-horizontal:  $padding-base-horizontal;
-$padding-xs-vertical:		$padding-base-vertical;
-$padding-xs-horizontal:		$padding-base-horizontal;
+$grid-rows:					24 !default;
+$grid-gutter-width:         10px !default;
+$grid-gutter-height:        $grid-gutter-width !default;
 
-$gray-light:				#4A4D4E;
+$gray-light:				#4A4D4E !default;
 
-$brand-primary:				#3F729B;
-$brand-success:				#5ab75c;
-$brand-info:				#4aafcd;
-$brand-warning:				#faa632;
-$brand-danger:				#da4f4a;
+$brand-primary:				#3F729B !default;
+$brand-success:				#27ae60 !default;
+$brand-info:				#3498db !default;
+$brand-warning:				#faa632 !default;
+$brand-danger:				#c0392b !default;
 
-$body-bg:					darken($gray-light, 4.5%);
+$body-bg:					darken($gray-light, 4.5%) !default;
 
-$text-color:				#F0F1F1;
-$link-color:				lighten($brand-primary, 20%);
-$text-muted:				lighten($gray-light, 15%);
+$text-color:				#F0F1F1 !default;
+$link-color:				lighten($brand-primary, 20%) !default;
+$text-muted:				lighten($gray-light, 15%) !default;
+$abbr-border-color:			$text-color !default;
 
-$input-bg:					#454646;
-$input-bg-disabled:			$input-bg;
-$input-color:				#c6c8c8;
-$input-color-placeholder:	$text-muted;
-$input-border:				#333434;
-$input-height-base:         29px;
-$input-height-large:        39px;
-$input-height-small:        23px;
+$input-bg:					#454646 !default;
+$input-bg-disabled:			$input-bg !default;
+$input-color:				#c6c8c8 !default;
+$input-color-placeholder:	$text-muted !default;
+$input-border:				#333434 !default;
+$input-height-base:         29px !default;
+$input-height-large:        39px !default;
+$input-height-small:        23px !default;
 
-$cursor-disabled:			default;
+$cursor-disabled:			default !default;
 
-$btn-default-color:         $input-color;
-$btn-default-bg:			$gray-light;
+$btn-default-color:         $input-color !default;
+$btn-default-bg:			$gray-light !default;
 
 /*--perso*/
-$tc_dark_border:			12.4%;
-$tc_darker_border:			25.4%;
-$tc_but_bg:					$btn-default-bg;
-$tc_but_border:				darken($btn-default-bg, $tc_dark_border);
-$tc_but_shadow:				lighten($btn-default-bg, 8%);
+$tc_dark_border:			12.4% !default;
+$tc_darker_border:			25.4% !default;
+$tc_but_bg:					$btn-default-bg !default;
+$tc_but_border:				darken($btn-default-bg, $tc_dark_border) !default;
+$tc_but_shadow:				lighten($btn-default-bg, 8%) !default;
 /*--*/
 
-$btn-default-border:        $tc_but_border;
+$btn-default-border:        $tc_but_border !default;
 
-$btn-primary-border:        darken($brand-primary, $tc_dark_border);
-$btn-success-border:        darken($brand-success, $tc_dark_border);
-$btn-info-border:           darken($brand-info, $tc_dark_border);
-$btn-warning-border:        darken($brand-warning, $tc_dark_border);
-$btn-danger-border:         darken($brand-danger, $tc_dark_border);
+$btn-primary-border:        darken($brand-primary, $tc_dark_border) !default;
+$btn-success-border:        darken($brand-success, $tc_dark_border) !default;
+$btn-info-border:           darken($brand-info, $tc_dark_border) !default;
+$btn-warning-border:        darken($brand-warning, $tc_dark_border) !default;
+$btn-danger-border:         darken($brand-danger, $tc_dark_border) !default;
 
-$table-bg-hover:			lighten($gray-light, 3.5%);
-$table-border-color:		none;
+$table-bg-hover:			lighten($gray-light, 3.5%) !default;
+$table-border-color:		none !default;
 
-$dropdown-bg:				$btn-default-bg;
-$dropdown-border:           $btn-default-border;
-$dropdown-fallback-border:	$dropdown-border;
-$dropdown-link-hover-bg:    lighten($dropdown-bg, 3.5%);;
+$dropdown-bg:				$btn-default-bg !default;
+$dropdown-border:           $btn-default-border !default;
+$dropdown-fallback-border:	$dropdown-border !default;
+$dropdown-link-hover-bg:    lighten($dropdown-bg, 3.5%) !default;
 
-$navbar-default-bg:						$btn-default-bg;
-$navbar-default-border:					$btn-default-border;
+$navbar-default-bg:						$btn-default-bg !default;
+$navbar-default-border:					$btn-default-border !default;
 
-$navbar-inverse-bg:						$brand-primary;
-$navbar-inverse-border:                 $btn-primary-border;
+$navbar-inverse-bg:						$brand-primary !default;
+$navbar-inverse-border:                 $btn-primary-border !default;
 
-$nav-tabs-border-color:					$btn-default-border;
-$nav-tabs-link-hover-border-color:		$nav-tabs-border-color;
-$nav-tabs-active-link-hover-bg:             $btn-default-bg;
-$nav-tabs-active-link-hover-color:          $btn-default-color;
-$nav-tabs-active-link-hover-border-color:   $nav-tabs-border-color;
-$nav-disabled-link-color:				$input-color;
+$nav-tabs-border-color:					$btn-default-border !default;
+$nav-tabs-link-hover-border-color:		$nav-tabs-border-color !default;
+$nav-tabs-active-link-hover-bg:             $btn-default-bg !default;
+$nav-tabs-active-link-hover-color:          $btn-default-color !default;
+$nav-tabs-active-link-hover-border-color:   $nav-tabs-border-color !default;
+$nav-disabled-link-color:				$input-color !default;
 
-$list-group-border:						$btn-default-border;
-$list-group-active-bg:					$brand-primary;
-$list-group-active-border:				none;
-$list-group-active-color:				white;
-$list-group-active-text-color:			white;
-$list-group-disabled-color:				$text-color;
-$list-group-disabled-bg:				$gray-light;
+$list-group-border:						$btn-default-border !default;
+$list-group-active-bg:					$brand-primary !default;
+$list-group-active-border:				none !default;
+$list-group-active-color:				white !default;
+$list-group-active-text-color:			white !default;
+$list-group-disabled-color:				$text-color !default;
+$list-group-disabled-bg:				$gray-light !default;
 
-$pager-border-radius:					0px;
+$pager-border-radius:					0px !default;
 
-$pagination-color:						$btn-default-color;
-$pagination-bg:							$btn-default-bg;
-$pagination-border:						$btn-default-border;
+$pagination-color:						$btn-default-color !default;
+$pagination-bg:							$btn-default-bg !default;
+$pagination-border:						$btn-default-border !default;
 
 $pagination-hover-color:				$text-color !default;
 $pagination-hover-bg:					$table-bg-hover !default;
-$pagination-hover-border:				$pagination-border;
+$pagination-hover-border:				$pagination-border !default;
 
-$pagination-active-color:				white;
+$pagination-active-color:				white !default;
 $pagination-active-bg:					$brand-primary !default;
-$pagination-active-border:				$btn-primary-border;
+$pagination-active-border:				$btn-primary-border !default;
 
-$pagination-disabled-color:				$list-group-disabled-color;
-$pagination-disabled-bg:				$list-group-disabled-bg;
-$pagination-disabled-border:			$btn-default-border;
+$pagination-disabled-color:				$list-group-disabled-color !default;
+$pagination-disabled-bg:				$list-group-disabled-bg !default;
+$pagination-disabled-border:			$btn-default-border !default;
 
-$panel-default-text:					white;
-$panel-default-heading-bg:				transparent;
-$panel-default-border:					$btn-default-bg;
-$panel-footer-bg:						$btn-default-bg;
+$panel-default-text:					white !default;
+$panel-default-heading-bg:				transparent !default;
+$panel-default-border:					$btn-default-bg !default;
+$panel-footer-bg:						$btn-default-bg !default;
+$panel-heading-padding:					5px 7.5px !default;
+$panel-body-padding:					$panel-heading-padding !default;
+$panel-footer-padding:					$panel-heading-padding !default;
 
-/*$modal-content-bg:						$panel-bg;
-$modal-header-border-color:				$panel-default-border;*/
+/*$modal-content-bg:						$panel-bg!default;
+$modal-header-border-color:				$panel-default-border!default;*/
 
-$badge-border-radius:					0px;
+$badge-border-radius:					0px !default;
+
+
+$resource-colors: "default" $btn-default-bg,
+"primary" $brand-primary,
+"success" $brand-success,
+"info" $brand-info,
+"warning" $brand-warning,
+"danger" $brand-danger,
+"violet" #8e44ad,
+"orange" #d35400,
+"green" #27ae60,
+"turquoise" #16a085,
+"brown" #c09853;
