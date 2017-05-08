@@ -16,9 +16,9 @@
 	<body>
 		<div class="game-container">
 
-			<div id='mod-faction' class="row row-md-1 row-hnb row-vnb">
+			<div class="row row-md-1 row-hnb row-vnb">
 
-				<div class="col-md-6 row-md-24 relief module">
+				<div id='mod-faction' class="col-md-6 row-md-24 relief module">
 					<div class='faction relief-bloc' title='FactionNom'>
 						<span class='color-bloc relief-img' style='background: #5BC0DE'></span><!--
 						--><span class='relief-text'>FactionNom</span><!--
@@ -72,30 +72,110 @@
 
 				<div id='mod-missions' class="col-md-2 row-md-24 relief module">
 
-					<div class="panel-group">
 
-						<div class="panel panel-default mission">
+					<div class="panel panel-default mission mission-state-progress reduced">
 
-							<div class="panel-heading">
-								<span class='mission-title'>
-									Titre de mission
+						<div class="panel-heading">
+							<span class='mission-title'>
+								Titre de mission 1
+							</span>
+
+							<div class='mission-title-right'>
+								<div class='player relief-bloc' title='Poisson' style='border-left-color: #5BC0DE'>
+									<img class='relief-img' src='img/avatar/av2.jpg' alt='Avatar de Poisson'/><!--
+									--><div class='relief-text'>Poisson</div><!--
+									--></div>
+
+								<span class='date' title='05/05/2017'>3j</span>
+								<span class='mission-open-box'>
+									<a class='mission-open btn btn-xs btn-link btn-inline glyphicon' 
+									   role="button" data-toggle="collapse" href="#collapse1" 
+									   aria-expanded="true" aria-controls="collapse1"></a>
 								</span>
-								<!--<h4 class="panel-title">-->
-								<!--									<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
-								<!--</a>-->
-								<!--</h4>-->
-								<div class='float-right'>
-									<div class='player relief-bloc reduced onhover' title='Toky' style='border-left-color: #5BC0DE'>
-										<img class='relief-img' src='img/avatar/av2.jpg' alt='Avatar de Toky'/><!--
-										--><div class='relief-text'>Toky</div><!--
-										--></div>
-									<span class='date'>3j</span>
-								</div>
+							</div>
+						</div>
+
+						<div id="collapse1" class="panel-collapse collapse">
+							<div class="panel-body">
+								Votre mission si vous l'acceptez, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 							</div>
 
-							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-								<div class="panel-body">
-									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							<div class="panel-footer">
+								<div class="mission-state">En cours</div>
+								<div class='float-right'>
+									<button class='btn btn-xs btn-inline btn-default'>Notifier changement</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default mission mission-state-success reduced">
+
+						<div class="panel-heading">
+							<span class='mission-title'>
+								Titre de mission 2
+							</span>
+
+							<div class='mission-title-right'>
+								<div class='player relief-bloc' title='Ken' style='border-left-color: #5BC0DE'>
+									<img class='relief-img' src='img/avatar/av1.png' alt='Avatar de Ken'/><!--
+									--><div class='relief-text'>Ken</div><!--
+									--></div>
+
+								<span class='date' title='03/05/2017'>5j</span>
+								<span class='mission-open-box'>
+									<a class='mission-open btn btn-xs btn-link btn-inline glyphicon' 
+									   role="button" data-toggle="collapse" href="#collapse2" 
+									   aria-expanded="true" aria-controls="collapse2"></a>
+								</span>
+							</div>
+						</div>
+
+						<div id="collapse2" class="panel-collapse collapse">
+							<div class="panel-body">
+								Votre mission si vous l'acceptez, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							</div>
+
+							<div class="panel-footer">
+								<div class="mission-state">Succès</div>
+								<div class='float-right'>
+									<button class='btn btn-xs btn-inline btn-default'>Notifier changement</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default mission mission-state-fail">
+
+						<div class="panel-heading">
+							<span class='mission-title'>
+								Titre de mission 3
+							</span>
+
+							<div class='mission-title-right'>
+								<div class='player relief-bloc' title='Choux-Fleur' style='border-left-color: #5BC0DE'>
+									<img class='relief-img' src='img/avatar/av1.png' alt='Avatar de Choux-Fleur'/><!--
+									--><div class='relief-text'>Choux-Fleur</div><!--
+									--></div>
+
+								<span class='date' title='02/05/2017'>6j</span>
+								<span class='mission-open-box'>
+									<a class='mission-open btn btn-xs btn-link btn-inline glyphicon' 
+									   role="button" data-toggle="collapse" href="#collapse3" 
+									   aria-expanded="true" aria-controls="collapse3"></a>
+								</span>
+							</div>
+						</div>
+
+						<div id="collapse3" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Votre mission si vous l'acceptez, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							</div>
+
+							<div class="panel-footer">
+								<div class="mission-state">Echec</div>
+								<div class='float-right'>
+									<button class='btn btn-xs btn-inline btn-default'>Notifier changement</button>
 								</div>
 							</div>
 						</div>
@@ -116,7 +196,69 @@
 			<div class="row row-md-11 row-hnb row-vnb">
 
 				<div id='mod-chat' class="col-md-2 row-md-24 relief module">
-					fff
+
+					<ul class="nav nav-tabs">
+
+						<li class="active"><a href="#chat-public" data-toggle="tab">Public</a></li>
+						<li><a href="#chat-faction" data-toggle="tab">Faction</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								Grade <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="#chat-sousofficier" data-toggle="tab">Sous-officier</a></li>
+								<li><a href="#chat-officier2" data-toggle="tab" class='disabled'>Officier 2<sup>nd</sup> classe</a></li>
+								<li><a href="#dropdown2" data-toggle="tab" class='disabled'>Officier 1<sup>er</sup> classe</a></li>
+								<li><a href="#dropdown2" data-toggle="tab" class='disabled'>Amiral</a></li>
+							</ul>
+						</li>
+					</ul>
+
+					<div class="tab-content">
+						<div class="tab-pane active in" id="chat-public">
+							<div class='chat list-group'>
+								<div class='chat-post list-group-item'>
+									<div class='chat-post-content'>
+										<div class='player relief-bloc reduced onhover' title='Choux-Fleur' style='border-left-color: #5BC0DE'>
+											<img class='relief-img' src='img/avatar/av1.png' alt='Avatar de Choux-Fleur'/><!--
+											--><div class='relief-text'>Choux-Fleur</div><!--
+											--></div>
+										blabla blablabla
+									</div>
+									<div class='date' title='18:07'>2m</div>
+								</div>
+								<div class='chat-post list-group-item'>
+									<div class='chat-post-content'>
+										<div class='player relief-bloc reduced onhover' title='Poisson' style='border-left-color: #5BC0DE'>
+											<img class='relief-img' src='img/avatar/av2.jpg' alt='Avatar de Poisson'/><!--
+											--><div class='relief-text'>Poisson</div><!--
+											--></div>
+										débordement de contenuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
+									</div>
+									<div class='date' title='18:08'>1m</div>
+								</div>
+								<div class='chat-post list-group-item'>
+									<div class='chat-post-content'>
+										<div class='player relief-bloc reduced onhover' title='Choux-Fleur' style='border-left-color: #5BC0DE'>
+											<img class='relief-img' src='img/avatar/av1.png' alt='Avatar de Choux-Fleur'/><!--
+											--><div class='relief-text'>Choux-Fleur</div><!--
+											--></div>
+										test
+									</div>
+									<div class='date' title='18:08'>17s</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane container-fluid" id="chat-faction">
+							<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+						</div>
+						<div class="tab-pane container-fluid" id="chat-sousofficier">
+							<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+						</div>
+						<div class="tab-pane container-fluid" id="chat-officier2">
+							<p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
+						</div>
+					</div>
 				</div>
 
 				<div id='mod-infos' class="col-md-4 row-md-24 relief module">
@@ -128,14 +270,49 @@
 				</div>
 
 				<div id='mod-notif' class="col-md-2 row-md-24 relief module">
-					iii
+
+					<div class='notification-group list-group'>
+						<div class='notification list-group-item'>
+							<div class='content'>
+								<div class='player relief-bloc' title='Choux-Fleur' style='border-left-color: #5BC0DE'>
+									<img class='relief-img' src='img/avatar/av1.png' alt='Avatar de Choux-Fleur'/><!--
+									--><div class='relief-text'>Choux-Fleur</div><!--
+									--></div>
+								a rejoint la faction <a href='#'>NomFaction</a>
+							</div>
+							<div class='date' title='05/05/2017'>3j</div>
+						</div>
+						<div class='notification list-group-item'>
+							<div class='content'>
+								<div class='player relief-bloc' title='Poisson' style='border-left-color: #5BC0DE'>
+									<img class='relief-img' src='img/avatar/av2.jpg' alt='Avatar de Poisson'/><!--
+									--><div class='relief-text'>Poisson</div><!--
+									--></div>
+								a lancé une attaque appel en <a href='#'>BF23</a>
+							</div>
+							<div class='date' title='04/05/2017'>4j</div>
+						</div>
+					</div>
+
 				</div>
 
 			</div>
 
 		</div>
 
+
 		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="../bootstrap/javascripts/bootstrap.min.js"></script>
+		<script>
+
+			$('.mission').on('show.bs.collapse', function () {
+				$(this).removeClass('reduced');
+			});
+
+			$('.mission').on('hide.bs.collapse', function () {
+				$(this).addClass('reduced');
+			});
+
+		</script>
 	</body>
 </html>

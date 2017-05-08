@@ -20,15 +20,15 @@ $font-size-h2:				floor(($font-size-base * 2)) !default; // 28px
 $font-size-h3:				ceil(($font-size-base * 1.55)) !default; // ~21px
 $font-size-h4:				ceil(($font-size-base * 1.10)) !default; // ~15px
 
-$line-height-base:			1.929 !default;
+$line-height-base:			1.42857 !default;
 $line-height-large:			1.42857 !default;
 $line-height-small:			1.75 !default;
 
-$padding-base-vertical:     0px !default;
+$padding-base-vertical:     4px !default;
 $padding-base-horizontal:   0.563rem !default;
 $padding-large-vertical:    8px !default;
 $padding-large-horizontal:  16px !default;
-$padding-small-vertical:    $padding-base-vertical !default;
+$padding-small-vertical:    0px !default;
 $padding-small-horizontal:  $padding-base-horizontal !default;
 $padding-xs-vertical:		$padding-base-vertical !default;
 $padding-xs-horizontal:		$padding-base-horizontal !default;
@@ -57,9 +57,9 @@ $input-bg-disabled:			$input-bg !default;
 $input-color:				#c6c8c8 !default;
 $input-color-placeholder:	$text-muted !default;
 $input-border:				#333434 !default;
-$input-height-base:         29px !default;
+/*$input-height-base:         29px !default;
 $input-height-large:        39px !default;
-$input-height-small:        23px !default;
+$input-height-small:        23px !default;*/
 
 $cursor-disabled:			default !default;
 
@@ -103,6 +103,15 @@ $nav-tabs-active-link-hover-color:          $btn-default-color !default;
 $nav-tabs-active-link-hover-border-color:   $nav-tabs-border-color !default;
 $nav-disabled-link-color:				$input-color !default;
 
+$panel-default-text:					white !default;
+$panel-default-heading-bg:				transparent !default;
+$panel-default-border:					$btn-default-bg !default;
+$panel-footer-bg:						$btn-default-bg !default;
+$panel-margin-bottom:					5px !default;
+$panel-heading-padding:					$panel-margin-bottom 7.5px !default;
+$panel-body-padding:					$panel-heading-padding !default;
+$panel-footer-padding:					$panel-heading-padding !default;
+
 $list-group-border:						$btn-default-border !default;
 $list-group-active-bg:					$brand-primary !default;
 $list-group-active-border:				none !default;
@@ -110,6 +119,7 @@ $list-group-active-color:				white !default;
 $list-group-active-text-color:			white !default;
 $list-group-disabled-color:				$text-color !default;
 $list-group-disabled-bg:				$gray-light !default;
+$list-group-item-padding:				$panel-heading-padding !default;
 
 $pager-border-radius:					0px !default;
 
@@ -129,14 +139,6 @@ $pagination-disabled-color:				$list-group-disabled-color !default;
 $pagination-disabled-bg:				$list-group-disabled-bg !default;
 $pagination-disabled-border:			$btn-default-border !default;
 
-$panel-default-text:					white !default;
-$panel-default-heading-bg:				transparent !default;
-$panel-default-border:					$btn-default-bg !default;
-$panel-footer-bg:						$btn-default-bg !default;
-$panel-heading-padding:					5px 7.5px !default;
-$panel-body-padding:					$panel-heading-padding !default;
-$panel-footer-padding:					$panel-heading-padding !default;
-
 /*$modal-content-bg:						$panel-bg!default;
 $modal-header-border-color:				$panel-default-border!default;*/
 
@@ -154,3 +156,7 @@ $resource-colors: "default" $btn-default-bg,
 "green" #27ae60,
 "turquoise" #16a085,
 "brown" #c09853;
+
+$player-size:							1.25em;
+$date-width:							1.3em;
+$mission-heading-right-width:			$player-size + $date-width + $line-height-base + 0.2em;

@@ -115,6 +115,11 @@
 	border-top: none;
 }
 
+.btn-inline {
+	display: inline-block;
+	vertical-align: text-top;
+}
+
 .small-caps {
 	font-variant: small-caps !important;
 }
@@ -134,8 +139,7 @@
 .resource {
 	vertical-align: middle;
 	margin: .1em;
-	cursor: help;
-	/*@include user-select(none);*/
+	cursor: default;
 
 	@each $c in $resource-colors {
 		&.resource-#{nth($c, 1)} {
@@ -199,16 +203,15 @@
 	}
 
 	&.reduced {
+		padding-right: 0;
+
 		> .relief-text {
 			display: none;
 		}
 
 		&.onhover {
-			&:not(:hover) {
-				padding-right: 0;
-			}
-
 			&:hover {
+				padding-right: 4px;
 
 				> .relief-text {
 					display: inline;
@@ -220,6 +223,10 @@
 
 .player {
 	border-left: 3px solid transparent;
+
+	> .relief-img {
+		max-width: 1.25em;
+	}
 }
 
 .color-bloc {
@@ -236,5 +243,153 @@
 }
 
 .date {
+	width: $date-width;
 	color: rgba(black, 0.3);
+	text-shadow: none;
+	cursor: default;
+}
+
+.mission {
+
+	.panel-heading {
+		padding-right: 0;
+		border-left: 2px solid transparent;
+
+		> .mission-title {
+			display: inline-block;
+			max-width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			word-wrap: break-word;
+			vertical-align: middle;
+		}
+
+		> .mission-title-right {
+			position: relative;
+			display: inline-block;
+			max-width: 100%;
+			width: 100%;
+
+			> .mission-open-box {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+
+				> .mission-open {
+					&:before {
+						content: "\e252";
+					}
+				}
+			}
+		}
+	}
+
+	&.reduced {
+		.panel-heading {
+
+			> .mission-title {
+				display: inline-block;
+				width: calc(100% - #{$mission-heading-right-width});
+				white-space: nowrap;
+			}
+
+			> .mission-title-right {
+				float: right;
+				width: $mission-heading-right-width;
+				text-align: right;
+
+				> .player {
+					@extend .reduced;
+				}
+
+				> .mission-open-box {
+					position: initial;
+
+					> .mission-open{
+						&:before {
+							content: "\e251";
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.panel-body {
+		max-height: 200px;
+		overflow: auto;
+	}
+
+	.mission-state {
+		@extend .label;
+		font-variant: small-caps;
+		cursor: default;
+	}
+
+	&.mission-state {
+		&-progress {
+			.panel-heading {
+				border-left-color: $brand-warning;
+			}
+			.mission-state {
+				@extend .label-warning;
+			}
+		}
+
+		&-success {
+			.panel-heading {
+				border-left-color: $brand-success;
+			}
+			.mission-state {
+				@extend .label-success;
+			}
+		}
+
+		&-fail {
+			.panel-heading {
+				border-left-color: $brand-danger;
+			}
+			.mission-state {
+				@extend .label-danger;
+			}
+		}
+	}
+}
+
+.notification-group {
+
+	> .notification {
+		white-space: nowrap;
+
+		> .content {
+			display: inline-block;
+			white-space: normal;
+			word-break: break-word;
+			width: calc(100% - #{$date-width});
+		}
+
+		> .date {
+			display: inline-block;
+			vertical-align: top;
+			text-align: right;
+		}
+	}
+}
+
+.chat {
+	> .chat-post {
+		white-space: nowrap;
+
+		> .chat-post-content {
+			display: inline-block;
+			white-space: normal;
+			word-break: break-word;
+			width: calc(100% - #{$date-width});
+		}
+		> .date {
+			display: inline-block;
+			vertical-align: top;
+			text-align: right;
+		}
+	}
 }

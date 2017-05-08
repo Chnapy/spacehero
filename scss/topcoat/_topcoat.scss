@@ -121,6 +121,15 @@ body {
 		font-weight: normal;
 		padding: 0 0.363rem;
 		font-size: 10px;
+
+		&.glyphicon {
+			width: $line-height-base + 0em;
+			padding: 0;
+
+			&.btn-link:hover, &.btn-link:focus {
+				text-decoration: none;
+			}
+		}
 	}
 
 	&-default {
@@ -461,11 +470,15 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 	}
 }
 
-.list-group > .list-group-item:not(.active):not(.disabled) {
-	@include btnColor($btn-default-bg);
+.list-group > .list-group-item {
+	padding: $list-group-item-padding;
 
-	&:focus {
-		@include focused;
+	&:not(.active):not(.disabled) {
+		@include btnColor($btn-default-bg);
+
+		&:focus {
+			@include focused;
+		}
 	}
 }
 
@@ -518,6 +531,7 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 
 .panel {
 	@include relief($panel-bg);
+	margin-bottom: $panel-margin-bottom;
 
 	> .panel-heading {
 		@include box-shadow(inset 0 1px rgba(255, 255, 255, 0.1));
@@ -614,6 +628,10 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 .text-info,
 .text-info:hover {
 	color: $brand-info;
+}
+
+.collapsing {
+	transition: none;
 }
 
 ::-webkit-scrollbar {
