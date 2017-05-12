@@ -428,6 +428,7 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 		> a {
 			padding: 0px 0.563rem;
 			cursor: default;
+			margin-right: 0;
 		}
 
 		&.active > a {
@@ -437,6 +438,18 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 				/*text-shadow: 0 -1px 0 $tc_but_border;*/
 				text-shadow: 0.25px 0px 0px $nav-tabs-active-link-hover-color;
 			}
+		}
+
+		&:not(.disabled) + li {
+			&, &.active, &:not(.active) {
+				> a, > a:hover, > a:focus {
+					border-left: none;
+				}
+			}
+		}
+		
+		&.disabled + li {
+			margin-left: -1px;
 		}
 	}
 

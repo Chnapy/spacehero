@@ -1,6 +1,15 @@
+/*--perso*/
+/*--*/
+/*$input-height-base:         29px !default;
+$input-height-large:        39px !default;
+$input-height-small:        23px !default;*/
+/*--perso*/
+/*--*/
+/*$modal-content-bg:						$panel-bg!default;
+$modal-header-border-color:				$panel-default-border!default;*/
 #mod-faction, #mod-resources {
-  /*	padding-top: 0 !important;
-  	padding-bottom: 0 !important;*/
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
   overflow: hidden; }
 
 #mod-notif {
@@ -12,17 +21,44 @@
       border-top: none; }
 
 #mod-chat {
-  padding: 0; }
+  padding: 0;
+  padding-top: 20px;
+  padding-bottom: 23px;
+  overflow: hidden; }
+  #mod-chat .nav-tabs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; }
+    #mod-chat .nav-tabs > li > a, #mod-chat .nav-tabs > li > a:hover, #mod-chat .nav-tabs > li > a:focus, #mod-chat .nav-tabs > li.active > a, #mod-chat .nav-tabs > li.active > a:hover, #mod-chat .nav-tabs > li.active > a:focus, #mod-chat .nav-tabs > li:not(.active) > a, #mod-chat .nav-tabs > li:not(.active) > a:hover, #mod-chat .nav-tabs > li:not(.active) > a:focus {
+      border-top: none;
+      border-left: none; }
   #mod-chat .tab-content {
+    max-height: 100%;
+    overflow: auto;
     border-left: none;
     border-right: none;
     border-bottom: none; }
-    #mod-chat .tab-content .list-group > .list-group-item {
-      border-left: none;
-      border-right: none; }
-      #mod-chat .tab-content .list-group > .list-group-item:first-child {
-        border-top: none;
-        -webkit-box-shadow: none;
-        box-shadow: none; }
+    #mod-chat .tab-content .list-group {
+      margin-bottom: 0; }
+      #mod-chat .tab-content .list-group > .list-group-item {
+        border-left: none;
+        border-right: none; }
+        #mod-chat .tab-content .list-group > .list-group-item:first-child {
+          border-top: none;
+          -webkit-box-shadow: none;
+          box-shadow: none; }
+  #mod-chat .input-group {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+    #mod-chat .input-group input.form-control {
+      border-bottom: none;
+      border-left: none; }
+    #mod-chat .input-group .btn {
+      border-bottom: none;
+      border-right: none;
+      padding-top: 1px; }
 
 /*# sourceMappingURL=spaceorder.css.map */

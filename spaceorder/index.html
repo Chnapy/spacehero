@@ -10,6 +10,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,600" rel="stylesheet"/>
 		<link rel="stylesheet" href="../css/spacehero.css"/>
 		<link rel="stylesheet" href="css/spaceorder.css"/>
 	</head>
@@ -18,51 +19,54 @@
 
 			<div class="row row-md-1 row-hnb row-vnb">
 
-				<div id='mod-faction' class="col-md-6 row-md-24 relief module">
-					<div class='faction relief-bloc' title='FactionNom'>
-						<span class='color-bloc relief-img' style='background: #5BC0DE'></span><!--
-						--><span class='relief-text'>FactionNom</span><!--
-						--></div>
+				<div id='mod-faction' class="col-md-6 row-md-24 relief module center-height-parent">
+					<div class="center-height-child">
+						<div class='faction relief-bloc' title='FactionNom'>
+							<span class='color-bloc relief-img' style='background: #5BC0DE'></span><!--
+							--><span class='relief-text'>FactionNom</span><!--
+							--></div>
 
-					<small class='small-caps'>Slogan qui tue !</small>
+						<span class='small-caps text-muted'>Slogan de la faction qui inspire la crainte et le respect</span>
 
-					<div class='float-right'>
-						<span class='relief-bloc'>23/134 membres connectés</span>
+						<div class='float-right'>
+							<span class='relief-bloc'>23/134 membres connectés</span>
+						</div>
 					</div>
 				</div>
 
-				<div id='mod-resources' class="col-md-6 row-md-24 relief module">
-
-					<div class='player relief-bloc' title='Chnapy' style='border-left-color: #5BC0DE'>
-						<img class='relief-img' src='img/avatar/av1.png' alt='Avatar de Chnapy'/><!--
-						--><div class='relief-text'>Chnapy</div><!--
-						--></div>
-
-					<div class="float-right">
-
-						<div class="resource resource-brown" title="Main d'oeuvre">
-							<div class="resource-value">
-								<span class="resource-value-current">123</span>
-								<span class="resource-value-total">354</span><!--
-								--></div><!--
-							--><div class="resource-name">MO</div><!--
+				<div id='mod-resources' class="col-md-6 row-md-24 relief module center-height-parent">
+					<div class="center-height-child">
+						<div class='player relief-bloc' title='Chnapy' style='border-left-color: #5BC0DE'>
+							<img class='relief-img' src='img/avatar/av1.png' alt='Avatar de Chnapy'/><!--
+							--><div class='relief-text'>Chnapy</div><!--
 							--></div>
 
-						<div class="resource resource-violet" title="Matériaux">
-							<div class="resource-value">
-								<span class="resource-value-current">276</span><!--
-								--></div><!--
-							--><div class="resource-name">MA</div><!--
-							--></div>
+						<div class="float-right">
 
-						<div class="resource resource-green" title="Militaire">
-							<div class="resource-value">
-								<span class="resource-value-current">167</span>
-								<span class="resource-value-total">167</span><!--
-								--></div><!--
-							--><div class="resource-name">MI</div><!--
-							--></div>
+							<div class="resource resource-brown" title="Main d'oeuvre">
+								<div class="resource-value">
+									<span class="resource-value-current">123</span>
+									<span class="resource-value-total">354</span><!--
+									--></div><!--
+								--><div class="resource-name">MO</div><!--
+								--></div>
 
+							<div class="resource resource-violet" title="Matériaux">
+								<div class="resource-value">
+									<span class="resource-value-current">276</span><!--
+									--></div><!--
+								--><div class="resource-name">MA</div><!--
+								--></div>
+
+							<div class="resource resource-green" title="Militaire">
+								<div class="resource-value">
+									<span class="resource-value-current">167</span>
+									<span class="resource-value-total">167</span><!--
+									--></div><!--
+								--><div class="resource-name">MI</div><!--
+								--></div>
+
+						</div>
 					</div>
 				</div>
 
@@ -188,7 +192,46 @@
 				</div>
 
 				<div id='mod-hierarchy' class="col-md-2 row-md-24 relief module">
-					eee
+
+					<div class="tree">
+						<ul>
+							<li>
+								<a class="tree-leaf">Parent</a>
+								<ul>
+									<li>
+										<a class="tree-leaf">Child</a>
+										<ul>
+											<li>
+												<a class="tree-leaf">Grand Child</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a class="tree-leaf">Sub Parent 1</a><a class="tree-leaf">Sub Parent 2</a>
+										<ul>
+											<li><a class="tree-leaf">Grand Child</a></li>
+											<li>
+												<a class="tree-leaf">Grand Child</a>
+												<ul>
+													<li>
+														<a class="tree-leaf">Great Grand Child</a>
+													</li>
+													<li>
+														<a class="tree-leaf">Great Grand Child</a>
+													</li>
+													<li>
+														<a class="tree-leaf">Great Grand Child</a>
+													</li>
+												</ul>
+											</li>
+											<li><a class="tree-leaf">Grand Child</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
 				</div>
 
 			</div>
@@ -207,7 +250,7 @@
 							</a>
 							<ul class="dropdown-menu dropdown-menu-right">
 								<li><a href="#chat-sousofficier" data-toggle="tab">Sous-officier</a></li>
-								<li><a href="#chat-officier2" data-toggle="tab" class='disabled'>Officier 2<sup>nd</sup> classe</a></li>
+								<li><a href="#chat-officier2" data-toggle="tab">Officier 2<sup>nd</sup> classe</a></li>
 								<li><a href="#dropdown2" data-toggle="tab" class='disabled'>Officier 1<sup>er</sup> classe</a></li>
 								<li><a href="#dropdown2" data-toggle="tab" class='disabled'>Amiral</a></li>
 							</ul>
@@ -249,16 +292,87 @@
 								</div>
 							</div>
 						</div>
-						<div class="tab-pane container-fluid" id="chat-faction">
-							<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+						<div class="tab-pane" id="chat-faction">
+							<div class='chat list-group'>
+								<div class='chat-post list-group-item'>
+									<div class='chat-post-content'>
+										<div class='player relief-bloc reduced onhover' title='Choux-Fleur' style='border-left-color: #5BC0DE'>
+											<img class='relief-img' src='img/avatar/av1.png' alt='Avatar de Choux-Fleur'/><!--
+											--><div class='relief-text'>Choux-Fleur</div><!--
+											--></div>
+										blabla blablabla
+									</div>
+									<div class='date' title='18:07'>2m</div>
+								</div>
+								<div class='chat-post list-group-item'>
+									<div class='chat-post-content'>
+										<div class='player relief-bloc reduced onhover' title='Poisson' style='border-left-color: #5BC0DE'>
+											<img class='relief-img' src='img/avatar/av2.jpg' alt='Avatar de Poisson'/><!--
+											--><div class='relief-text'>Poisson</div><!--
+											--></div>
+										débordement de contenuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
+									</div>
+									<div class='date' title='18:08'>1m</div>
+								</div>
+								<div class='chat-post list-group-item'>
+									<div class='chat-post-content'>
+										<div class='player relief-bloc reduced onhover' title='Choux-Fleur' style='border-left-color: #5BC0DE'>
+											<img class='relief-img' src='img/avatar/av1.png' alt='Avatar de Choux-Fleur'/><!--
+											--><div class='relief-text'>Choux-Fleur</div><!--
+											--></div>
+										test
+									</div>
+									<div class='date' title='18:08'>17s</div>
+								</div>
+							</div>
 						</div>
-						<div class="tab-pane container-fluid" id="chat-sousofficier">
-							<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+						<div class="tab-pane" id="chat-sousofficier">
+							<div class='chat list-group'>
+								<div class='chat-post list-group-item'>
+									<div class='chat-post-content'>
+										<div class='player relief-bloc reduced onhover' title='Choux-Fleur' style='border-left-color: #5BC0DE'>
+											<img class='relief-img' src='img/avatar/av1.png' alt='Avatar de Choux-Fleur'/><!--
+											--><div class='relief-text'>Choux-Fleur</div><!--
+											--></div>
+										blabla blablabla
+									</div>
+									<div class='date' title='18:07'>2m</div>
+								</div>
+								<div class='chat-post list-group-item'>
+									<div class='chat-post-content'>
+										<div class='player relief-bloc reduced onhover' title='Choux-Fleur' style='border-left-color: #5BC0DE'>
+											<img class='relief-img' src='img/avatar/av1.png' alt='Avatar de Choux-Fleur'/><!--
+											--><div class='relief-text'>Choux-Fleur</div><!--
+											--></div>
+										test
+									</div>
+									<div class='date' title='18:08'>17s</div>
+								</div>
+							</div>
 						</div>
-						<div class="tab-pane container-fluid" id="chat-officier2">
-							<p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
+						<div class="tab-pane" id="chat-officier2">
+							<div class='chat list-group'>
+								<div class='chat-post list-group-item'>
+									<div class='chat-post-content'>
+										<div class='player relief-bloc reduced onhover' title='Poisson' style='border-left-color: #5BC0DE'>
+											<img class='relief-img' src='img/avatar/av2.jpg' alt='Avatar de Poisson'/><!--
+											--><div class='relief-text'>Poisson</div><!--
+											--></div>
+										débordement de contenuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
+									</div>
+									<div class='date' title='18:08'>1m</div>
+								</div>
+							</div>
 						</div>
 					</div>
+
+					<div class="input-group">
+						<input type="text" class="form-control input-sm"/>
+						<span class="input-group-btn">
+							<button class="btn btn-sm btn-default"><span class="glyphicon glyphicon-send"></span></button>
+						</span>
+					</div>
+
 				</div>
 
 				<div id='mod-infos' class="col-md-4 row-md-24 relief module">

@@ -6325,12 +6325,17 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
     background-color: #434546; }
 .nav-tabs > li > a {
   padding: 0px 0.563rem;
-  cursor: default; }
+  cursor: default;
+  margin-right: 0; }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
   -webkit-box-shadow: inset 0 1px #5e6263;
   box-shadow: inset 0 1px #5e6263;
   /*text-shadow: 0 -1px 0 $tc_but_border;*/
   text-shadow: 0.25px 0px 0px #c6c8c8; }
+.nav-tabs > li:not(.disabled) + li > a, .nav-tabs > li:not(.disabled) + li > a:hover, .nav-tabs > li:not(.disabled) + li > a:focus, .nav-tabs > li:not(.disabled) + li.active > a, .nav-tabs > li:not(.disabled) + li.active > a:hover, .nav-tabs > li:not(.disabled) + li.active > a:focus, .nav-tabs > li:not(.disabled) + li:not(.active) > a, .nav-tabs > li:not(.disabled) + li:not(.active) > a:hover, .nav-tabs > li:not(.disabled) + li:not(.active) > a:focus {
+  border-left: none; }
+.nav-tabs > li.disabled + li {
+  margin-left: -1px; }
 .nav-tabs + .tab-content {
   background-color: #4A4D4E;
   border: 1px solid #2b2d2e;
@@ -6640,6 +6645,98 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
     border-right: 0px !important; }
   ::-webkit-scrollbar-thumb:horizontal, ::-webkit-scrollbar-button:horizontal {
     border-bottom: 0px !important; }
+
+.tree {
+  position: relative;
+  z-index: 0;
+  width: 1000px; }
+  .tree * {
+    margin: 0;
+    padding: 0; }
+  .tree ul {
+    padding-top: 10px;
+    position: relative;
+    /*Time to add downward connectors from parents*/ }
+    .tree ul li {
+      float: left;
+      text-align: center;
+      list-style-type: none;
+      position: relative;
+      padding: 10px 2.5px 0 2.5px;
+      /*We will use ::before and ::after to draw the connectors*/
+      /*We need to remove left-right connectors from elements without 
+      any siblings*/
+      /*Remove space from the top of single children*/
+      /*Remove left connector from first child and 
+      right connector from last child*/
+      /*Adding back the vertical connector to the last nodes*/ }
+      .tree ul li::before, .tree ul li::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 50%;
+        border-top: 1px solid #2b2d2e;
+        width: 50%;
+        height: 30px;
+        z-index: -1; }
+      .tree ul li::after {
+        right: auto;
+        left: 50%;
+        border-left: 1px solid #2b2d2e; }
+      .tree ul li:only-child::after, .tree ul li:only-child::before {
+        display: none; }
+      .tree ul li:only-child {
+        padding-top: 0; }
+      .tree ul li:first-child::before, .tree ul li:last-child::after {
+        border: 0 none; }
+      .tree ul li:last-child::before {
+        border-right: 1px solid #2b2d2e;
+        border-radius: 0 0px 0 0;
+        -webkit-transform: translate(1px, 0);
+        -ms-transform: translate(1px, 0);
+        -o-transform: translate(1px, 0);
+        transform: translate(1px, 0); }
+      .tree ul li:first-child::after {
+        border-radius: 0px 0 0 0; }
+      .tree ul li .tree-leaf {
+        background: #4A4D4E;
+        -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+        box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+        border: 1px solid #2b2d2e;
+        /*border: $tree-border;*/
+        padding: 5px 10px;
+        display: inline-block;
+        /*Time for some hover effects*/
+        /*We will apply the hover effect the the lineage of the element also*/
+        /*Connector styles on hover*/ }
+        .tree ul li .tree-leaf:hover, .tree ul li .tree-leaf:hover ~ ul li .tree-leaf {
+          /*					background: #c8e4f8; 
+          					color: #000; */
+          border: 1px solid #2b2d2e; }
+        .tree ul li .tree-leaf:hover ~ ul li::after,
+        .tree ul li .tree-leaf .tree li .tree-leaf:hover ~ ul li::before,
+        .tree ul li .tree-leaf .tree li .tree-leaf:hover ~ ul::before,
+        .tree ul li .tree-leaf .tree li .tree-leaf:hover ~ ul ul::before {
+          border-color: #2b2d2e; }
+        .tree ul li .tree-leaf + .tree-leaf {
+          margin-left: 30px;
+          position: relative; }
+          .tree ul li .tree-leaf + .tree-leaf::before {
+            content: '';
+            position: absolute;
+            border-top: 1px solid #2b2d2e;
+            top: 50%;
+            left: -31px;
+            width: 30px; }
+    .tree ul ul::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      border-left: 1px solid #2b2d2e;
+      width: 0;
+      height: 22px;
+      z-index: -1; }
 
 .row-xs-1, .row-sm-1, .row-md-1, .row-lg-1, .row-xs-2, .row-sm-2, .row-md-2, .row-lg-2, .row-xs-3, .row-sm-3, .row-md-3, .row-lg-3, .row-xs-4, .row-sm-4, .row-md-4, .row-lg-4, .row-xs-5, .row-sm-5, .row-md-5, .row-lg-5, .row-xs-6, .row-sm-6, .row-md-6, .row-lg-6, .row-xs-7, .row-sm-7, .row-md-7, .row-lg-7, .row-xs-8, .row-sm-8, .row-md-8, .row-lg-8, .row-xs-9, .row-sm-9, .row-md-9, .row-lg-9, .row-xs-10, .row-sm-10, .row-md-10, .row-lg-10, .row-xs-11, .row-sm-11, .row-md-11, .row-lg-11, .row-xs-12, .row-sm-12, .row-md-12, .row-lg-12, .row-xs-13, .row-sm-13, .row-md-13, .row-lg-13, .row-xs-14, .row-sm-14, .row-md-14, .row-lg-14, .row-xs-15, .row-sm-15, .row-md-15, .row-lg-15, .row-xs-16, .row-sm-16, .row-md-16, .row-lg-16, .row-xs-17, .row-sm-17, .row-md-17, .row-lg-17, .row-xs-18, .row-sm-18, .row-md-18, .row-lg-18, .row-xs-19, .row-sm-19, .row-md-19, .row-lg-19, .row-xs-20, .row-sm-20, .row-md-20, .row-lg-20, .row-xs-21, .row-sm-21, .row-md-21, .row-lg-21, .row-xs-22, .row-sm-22, .row-md-22, .row-lg-22, .row-xs-23, .row-sm-23, .row-md-23, .row-lg-23, .row-xs-24, .row-sm-24, .row-md-24, .row-lg-24 {
   min-width: 1px; }
@@ -8167,6 +8264,24 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 
 .row + .row-vnb .relief {
   border-top: none; }
+
+.center-height-parent {
+  position: relative;
+  /*display: table;*/ }
+  .center-height-parent .center-height-child {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: inherit;
+    padding-right: inherit;
+    left: 0;
+    right: 0;
+    /*		display: table-cell;
+    		vertical-align: middle;*/ }
+
+.center-height-flex {
+  display: flex;
+  align-items: center; }
 
 .btn-inline {
   display: inline-block;

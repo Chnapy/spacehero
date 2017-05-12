@@ -115,6 +115,28 @@
 	border-top: none;
 }
 
+.center-height-parent {
+	position: relative;
+	/*display: table;*/
+
+	.center-height-child {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		padding-left: inherit;
+		padding-right: inherit;
+		left: 0;
+		right: 0;
+		/*		display: table-cell;
+				vertical-align: middle;*/
+	}
+}
+
+.center-height-flex {
+	display: flex;
+	align-items: center;
+}
+
 .btn-inline {
 	display: inline-block;
 	vertical-align: text-top;
