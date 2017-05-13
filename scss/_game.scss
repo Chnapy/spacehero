@@ -244,6 +244,7 @@
 }
 
 .player {
+	display: inline !important;
 	border-left: 3px solid transparent;
 
 	> .relief-img {

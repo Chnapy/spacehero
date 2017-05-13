@@ -9,7 +9,6 @@ $tree-sub-margin-left:					30px;
 .tree {
 	position: relative;
 	z-index: 0;
-	width: 1000px;
 
 	* {
 		margin: 0;
@@ -19,13 +18,18 @@ $tree-sub-margin-left:					30px;
 	ul {
 		padding-top: $tree-padding-top; 
 		position: relative;
+		white-space: nowrap;
+		font-size: 0;
 
 		li {
-			float: left; 
+			/*float: left;*/
+			display: inline-block;
+			vertical-align: top;
 			text-align: center;
 			list-style-type: none;
 			position: relative;
 			padding: $tree-padding-top $tree-padding-side 0 $tree-padding-side;
+			font-size: 1rem;
 
 			/*We will use ::before and ::after to draw the connectors*/
 			&::before, &::after {
@@ -73,11 +77,14 @@ $tree-sub-margin-left:					30px;
 				border-radius: $tree-border-radius 0 0 0;
 			}
 
+			a.tree-leaf {
+				/*border: $tree-border;*/
+			}
+
 			.tree-leaf {
 				@include relief;
-				/*border: $tree-border;*/
-				padding: 5px 10px;
 				display: inline-block;
+				padding: 5px 10px;
 
 				/*Time for some hover effects*/
 				/*We will apply the hover effect the the lineage of the element also*/
