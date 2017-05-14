@@ -6446,7 +6446,7 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
   background: #515556;
   -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-  border: 1px solid #121313; }
+  border: 1px solid #333535; }
 
 .breadcrumb {
   background: #4A4D4E;
@@ -6473,7 +6473,7 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
   background: #515556;
   -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-  border: 1px solid #121313;
+  border: 1px solid #333535;
   margin-bottom: 5px; }
   .panel > .panel-heading {
     -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
@@ -6703,26 +6703,32 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
       .tree ul li:first-child::after {
         border-radius: 0px 0 0 0; }
       .tree ul li a.tree-leaf {
+        padding: 5px 10px;
         /*border: $tree-border;*/ }
       .tree ul li .tree-leaf {
-        background: #4A4D4E;
-        -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-        box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-        border: 1px solid #2b2d2e;
-        display: inline-block;
-        padding: 5px 10px;
-        /*Time for some hover effects*/
-        /*We will apply the hover effect the the lineage of the element also*/
-        /*Connector styles on hover*/ }
-        .tree ul li .tree-leaf:hover, .tree ul li .tree-leaf:hover ~ ul li .tree-leaf {
-          /*					background: #c8e4f8; 
-          					color: #000; */
-          border: 1px solid #2b2d2e; }
-        .tree ul li .tree-leaf:hover ~ ul li::after,
-        .tree ul li .tree-leaf .tree li .tree-leaf:hover ~ ul li::before,
-        .tree ul li .tree-leaf .tree li .tree-leaf:hover ~ ul::before,
-        .tree ul li .tree-leaf .tree li .tree-leaf:hover ~ ul ul::before {
-          border-color: #2b2d2e; }
+        display: inline-block; }
+        .tree ul li .tree-leaf-column > * {
+          display: block;
+          margin: 0; }
+          .tree ul li .tree-leaf-column > *:not(:first-child) {
+            margin-top: 2.5px; }
+        .tree ul li .tree-leaf-border {
+          background: #4A4D4E;
+          -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+          box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+          border: 1px solid #2b2d2e;
+          /*Time for some hover effects*/
+          /*We will apply the hover effect the the lineage of the element also*/
+          /*Connector styles on hover*/ }
+          .tree ul li .tree-leaf-border:hover, .tree ul li .tree-leaf-border:hover ~ ul li .tree-leaf {
+            /*					background: #c8e4f8; 
+            					color: #000; */
+            border: 1px solid #2b2d2e; }
+          .tree ul li .tree-leaf-border:hover ~ ul li::after,
+          .tree ul li .tree-leaf-border .tree li .tree-leaf:hover ~ ul li::before,
+          .tree ul li .tree-leaf-border .tree li .tree-leaf:hover ~ ul::before,
+          .tree ul li .tree-leaf-border .tree li .tree-leaf:hover ~ ul ul::before {
+            border-color: #2b2d2e; }
         .tree ul li .tree-leaf + .tree-leaf {
           margin-left: 30px;
           position: relative; }
@@ -8304,6 +8310,7 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
   overflow: auto; }
 
 .resource {
+  white-space: nowrap;
   vertical-align: middle;
   margin: .1em;
   cursor: default; }
@@ -8385,7 +8392,11 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
   font-variant: small-caps;
   padding: 0 4px;
   vertical-align: middle;
-  cursor: default; }
+  cursor: default;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  white-space: nowrap; }
   .relief-bloc, .relief-bloc > .relief-img, .relief-bloc > .relief-text {
     display: inline; }
   .relief-bloc > .relief-img {

@@ -78,28 +78,40 @@ $tree-sub-margin-left:					30px;
 			}
 
 			a.tree-leaf {
+				padding: 5px 10px;
 				/*border: $tree-border;*/
 			}
 
 			.tree-leaf {
-				@include relief;
 				display: inline-block;
-				padding: 5px 10px;
 
-				/*Time for some hover effects*/
-				/*We will apply the hover effect the the lineage of the element also*/
-				&:hover, &:hover~ul li .tree-leaf {
-					/*					background: #c8e4f8; 
-										color: #000; */
-					border: 1px solid $tree-border-color-hover;
+				&-column > * {
+					display: block;
+					margin: 0;
+
+					&:not(:first-child) {
+						margin-top: $tree-padding-side;
+					}
 				}
 
-				/*Connector styles on hover*/
-				&:hover~ul li::after, 
-					.tree li .tree-leaf:hover~ul li::before, 
-					.tree li .tree-leaf:hover~ul::before, 
-					.tree li .tree-leaf:hover~ul ul::before {
-					border-color: $tree-border-color-hover;
+				&-border {
+					@include relief;
+
+					/*Time for some hover effects*/
+					/*We will apply the hover effect the the lineage of the element also*/
+					&:hover, &:hover~ul li .tree-leaf {
+						/*					background: #c8e4f8; 
+											color: #000; */
+						border: 1px solid $tree-border-color-hover;
+					}
+
+					/*Connector styles on hover*/
+					&:hover~ul li::after, 
+						.tree li .tree-leaf:hover~ul li::before, 
+						.tree li .tree-leaf:hover~ul::before, 
+						.tree li .tree-leaf:hover~ul ul::before {
+						border-color: $tree-border-color-hover;
+					}
 				}
 
 				&+.tree-leaf {

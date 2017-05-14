@@ -1,9 +1,9 @@
 
 /*Functions and mixins*/
 
-@function getBorderColor($bg) {
+@function getBorderColor($bg, $lighter: false) {
 	$darken: 0;
-	@if $bg == $btn-default-bg {
+	@if ($bg == $btn-default-bg) or $lighter {
 		$darken:	$tc_dark_border;
 	} @else {
 		$darken:	$tc_darker_border;
@@ -25,10 +25,10 @@
 	z-index: 2;
 }
 
-@mixin relief($bg: $btn-default-bg) {
+@mixin relief($bg: $btn-default-bg, $lighter: false) {
 	background: $bg;
 	@include box-shadow(inset 0 1px rgba(white, 0.1));
-	border: 1px solid getBorderColor($bg);
+	border: 1px solid getBorderColor($bg, $lighter);
 }
 
 @mixin btnColor($bg) {
@@ -523,7 +523,7 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 }
 
 .well {
-	@include relief($well-bg);
+	@include relief($well-bg, true);
 }
 
 .breadcrumb {
@@ -543,7 +543,7 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 }
 
 .panel {
-	@include relief($panel-bg);
+	@include relief($panel-bg, true);
 	margin-bottom: $panel-margin-bottom;
 
 	> .panel-heading {

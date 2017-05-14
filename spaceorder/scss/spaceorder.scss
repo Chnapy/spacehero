@@ -8,6 +8,14 @@
 	overflow: hidden;
 }
 
+#mod-hierarchy {
+	.tree {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
 #mod-notif {
 	padding: 0;
 

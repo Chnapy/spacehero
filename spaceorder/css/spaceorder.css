@@ -12,6 +12,11 @@ $modal-header-border-color:				$panel-default-border!default;*/
   padding-bottom: 0 !important;
   overflow: hidden; }
 
+#mod-hierarchy .tree {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); }
+
 #mod-notif {
   padding: 0; }
   #mod-notif .notification-group .notification {

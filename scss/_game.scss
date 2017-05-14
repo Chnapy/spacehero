@@ -159,6 +159,7 @@
 }
 
 .resource {
+	white-space: nowrap;
 	vertical-align: middle;
 	margin: .1em;
 	cursor: default;
@@ -205,6 +206,10 @@
 	padding: 0 4px;
 	vertical-align: middle;
 	cursor: default;
+	overflow: hidden;
+    text-overflow: ellipsis;
+	text-align: left;
+	white-space: nowrap;
 
 	&, > .relief-img, > .relief-text {
 		display: inline;
