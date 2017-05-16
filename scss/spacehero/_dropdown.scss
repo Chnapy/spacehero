@@ -1,0 +1,26 @@
+
+
+//Dropdown
+
+.dropdown-menu {
+	padding: 0;
+
+	> li > a {
+		@include btnColor($btn-default-bg);
+		border-left: none !important;
+		border-right: none !important;
+		border-top-width: 0px !important;
+	}
+
+	> .divider + li > a {
+		border-top-width: 1px !important;
+	}
+
+	> li:last-child > a {
+		border-bottom: none;
+	}
+
+	.divider {
+		margin: 2px 0;
+	}
+}

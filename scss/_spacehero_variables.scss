@@ -143,20 +143,3 @@ $pagination-disabled-border:			$btn-default-border !default;
 $modal-header-border-color:				$panel-default-border!default;*/
 
 $badge-border-radius:					0px !default;
-
-
-$resource-colors: "default" $btn-default-bg,
-"primary" $brand-primary,
-"success" $brand-success,
-"info" $brand-info,
-"warning" $brand-warning,
-"danger" $brand-danger,
-"violet" #8e44ad,
-"orange" #d35400,
-"green" #27ae60,
-"turquoise" #16a085,
-"brown" #c09853;
-
-$player-size:							1.25em;
-$date-width:							1.3em;
-$mission-heading-right-width:			$player-size + $date-width + $line-height-base + 0.2em;

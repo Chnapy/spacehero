@@ -1,0 +1,83 @@
+
+//Button
+
+.btn {
+	position: relative;
+    display: inline-block;
+    vertical-align: top;
+    @include box-sizing(border-box);
+    background-clip: padding-box;
+    margin: 0;
+	font-weight: 600;
+    cursor: default;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-decoration: none;
+    letter-spacing: 0;
+    vertical-align: top;
+    @include box-shadow(inset 0 1px transparent);
+	border-width: 1px;
+	border-style: solid;
+
+	&-sm {
+		font-weight: normal;
+		padding: 0 0.563rem;
+	}
+
+	&-xs {
+		font-weight: normal;
+		padding: 0 0.363rem;
+		font-size: 10px;
+
+		&.glyphicon {
+			width: $line-height-base + 0em;
+			padding: 0;
+
+			&.btn-link:hover, &.btn-link:focus {
+				text-decoration: none;
+			}
+		}
+	}
+
+	&-default {
+		@include btnColor($btn-default-bg);
+	}
+
+	&-primary {
+		@include btnColor($brand-primary);
+	}
+
+	&-success {
+		@include btnColor($brand-success);
+	}
+
+	&-info {
+		@include btnColor($brand-info);
+	}
+
+	&-warning {
+		@include btnColor($brand-warning);
+	}
+
+	&-danger {
+		@include btnColor($brand-danger);
+	}
+
+	&-link {
+		@include btnColor($btn-default-bg);
+
+		&:not(:hover):not(:focus) {
+			background: none;
+			border-color: transparent !important;
+			@include box-shadow(none);
+		}
+	}
+
+	&:focus {
+		@include focused;
+	}
+
+	&[disabled] {
+		@include disabled;
+	}
+}

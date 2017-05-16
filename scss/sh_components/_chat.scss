@@ -1,0 +1,19 @@
+
+
+.chat {
+	> .chat-post {
+		white-space: nowrap;
+
+		> .chat-post-content {
+			display: inline-block;
+			white-space: normal;
+			word-break: break-word;
+			width: calc(100% - #{$date-width});
+		}
+		> .date {
+			display: inline-block;
+			vertical-align: top;
+			text-align: right;
+		}
+	}
+}

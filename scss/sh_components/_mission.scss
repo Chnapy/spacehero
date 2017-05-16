@@ -1,0 +1,108 @@
+
+
+.mission {
+
+	.panel-heading {
+		padding-right: 0;
+		border-left: 2px solid transparent;
+
+		> .mission-title {
+			display: inline-block;
+			max-width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			word-wrap: break-word;
+			vertical-align: middle;
+		}
+
+		> .mission-title-right {
+			position: relative;
+			display: inline-block;
+			max-width: 100%;
+			width: 100%;
+
+			> .mission-open-box {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+
+				> .mission-open {
+					&:before {
+						content: "\e252";
+					}
+				}
+			}
+		}
+	}
+
+	&.reduced {
+		.panel-heading {
+
+			> .mission-title {
+				display: inline-block;
+				width: calc(100% - #{$mission-heading-right-width});
+				white-space: nowrap;
+			}
+
+			> .mission-title-right {
+				float: right;
+				width: $mission-heading-right-width;
+				text-align: right;
+
+				> .player {
+					@extend .reduced;
+				}
+
+				> .mission-open-box {
+					position: initial;
+
+					> .mission-open{
+						&:before {
+							content: "\e251";
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.panel-body {
+		max-height: 200px;
+		overflow: auto;
+	}
+
+	.mission-state {
+		@extend .label;
+		font-variant: small-caps;
+		cursor: default;
+	}
+
+	&.mission-state {
+		&-progress {
+			.panel-heading {
+				border-left-color: $brand-warning;
+			}
+			.mission-state {
+				@extend .label-warning;
+			}
+		}
+
+		&-success {
+			.panel-heading {
+				border-left-color: $brand-success;
+			}
+			.mission-state {
+				@extend .label-success;
+			}
+		}
+
+		&-fail {
+			.panel-heading {
+				border-left-color: $brand-danger;
+			}
+			.mission-state {
+				@extend .label-danger;
+			}
+		}
+	}
+}

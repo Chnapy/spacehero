@@ -1,0 +1,91 @@
+
+
+//Nav
+
+.navbar {
+	&.navbar-default {
+		@include relief;
+		text-shadow: 0 -1px 0 $tc_but_border;
+	}
+
+	&.navbar-inverse {
+		@extend .relief-primary;
+		text-shadow: 0 -1px 0 darken($btn-primary-bg, $tc_dark_border);
+	}
+
+	&.navbar-fixed-top, &.navbar-fixed-bottom {
+		border-left: none;
+		border-right: none;
+		&.navbar-fixed-top {
+			border-top: none;
+		}
+		&.navbar-fixed-bottom {
+			border-bottom: none;
+		}
+	}
+}
+
+.nav-tabs {
+
+	> li {
+
+		&:not(.active) > a {
+			color: darken($nav-tabs-active-link-hover-color, 5%);
+			background-color: darken($nav-tabs-active-link-hover-bg, 5%);
+			border: 1px solid $nav-tabs-border-color;
+			@include box-shadow(inset 0 1px darken($tc_but_shadow, 5%));
+
+			&:hover {
+				background-color: darken($nav-tabs-active-link-hover-bg, 3%);
+			}
+		}
+
+		> a {
+			padding: 0px 0.563rem;
+			cursor: default;
+			margin-right: 0;
+		}
+
+		&.active > a {
+
+			&, &:hover, &:focus {
+				@include box-shadow(inset 0 1px $tc_but_shadow);
+				/*text-shadow: 0 -1px 0 $tc_but_border;*/
+				text-shadow: 0.25px 0px 0px $nav-tabs-active-link-hover-color;
+			}
+		}
+
+		&:not(.disabled) + li {
+			&, &.active, &:not(.active) {
+				> a, > a:hover, > a:focus {
+					border-left: none;
+				}
+			}
+		}
+		
+		&.disabled + li {
+			margin-left: -1px;
+		}
+	}
+
+	+ .tab-content {
+		background-color: $nav-tabs-active-link-hover-bg;
+		border: 1px solid $nav-tabs-border-color;
+		border-top: none;
+	}
+}
+
+.nav-pills > li {
+	&:not(.active) > a {
+		border: 1px solid transparent;
+
+		&:hover, &:focus {
+			/*@include relief;*/
+			@extend .btn-link;
+		}
+	}
+
+	&.active > a {
+		@include btnColor($brand-primary);
+	}
+}

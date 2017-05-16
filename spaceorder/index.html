@@ -189,33 +189,8 @@
 
 				<div id='mod-map' class="col-md-8 row-md-24 relief module">
 
-
-					<div class="table2d">
-
-						<div class="table2d-top"><div class="table2d-th"></div><div class="table2d-th"></div><div class="table2d-th"></div><div class="table2d-th"></div><div class="table2d-th"></div><div class="table2d-th"></div></div>
-						<div class="table2d-left"><div class="table2d-th"></div><div class="table2d-th"></div><div class="table2d-th"></div><div class="table2d-th"></div><div class="table2d-th"></div></div>
-
-						<table class="table2d-table">
-							<tr>
-								<td></td><td></td><td></td><td></td><td></td><td></td>
-							</tr>
-							<tr>
-								<td></td><td></td><td></td><td></td><td></td><td></td>
-							</tr>
-							<tr>
-								<td></td><td></td><td></td><td></td><td></td><td></td>
-							</tr>
-							<tr>
-								<td></td><td></td><td></td><td></td><td></td><td></td>
-							</tr>
-							<tr>
-								<td></td><td></td><td></td><td></td><td></td><td></td>
-							</tr>
-						</table>
-
-					</div>
-
-
+<!--					Table generated-->
+					
 				</div>
 
 				<div id='mod-hierarchy' class="col-md-2 row-md-24 relief module">
@@ -568,10 +543,20 @@
 			$('.mission').on('hide.bs.collapse', function () {
 				$(this).addClass('reduced');
 			});
+			
+			generateTable('#mod-map', 100, 100, function() {
+				this.i ? this.i++ : (this.i = 1);
+				return this.i;
+			}, function() {
+				this.j ? this.j++ : (this.j = 1);
+				return this.j;
+			});
 
 			//Table 2D
-			$('.table2d').each((i, t2d) => {
-
+			$('.table2d').each((i, t2d) => bindTable2D(t2d));
+			
+			function bindTable2D(t2d) {
+				
 				let table = $(t2d).find('.table2d-table');
 				let top = $(t2d).find('.table2d-top');
 				let left = $(t2d).find('.table2d-left');
@@ -579,11 +564,40 @@
 				$(table).bind("scroll", (e) => {
 					let scrollTop = e.target.scrollTop;
 					let scrollLeft = e.target.scrollLeft;
-					
+
 					$(top).scrollLeft(scrollLeft);
 					$(left).scrollTop(scrollTop);
 				});
-			});
+			}
+
+			function generateTable(target, width, height, setTop, setBottom) {
+				let top = `<div class="table2d-top">`;
+				let left = `<div class="table2d-left">`;
+				const th = `<div class="table2d-th"></div>`;
+				const endiv = `</div>`;
+				for (let i = 0; i < width; i++) {
+					top += `<div class="table2d-th">${setTop()}</div>`;
+				}
+				for (let i = 0; i < height; i++) {
+					left += `<div class="table2d-th">${setBottom()}</div>`;
+				}
+				top += endiv;
+				left += endiv;
+
+				let table = `<table class="table2d-table"><tbody>`;
+				for (let i = 0; i < height; i++) {
+					table += `<tr>`;
+					for (let j = 0; j < width; j++) {
+						table += `<td></td>`;
+					}
+					table += `</tr>`;
+				}
+				table += `</tbody></table>`;
+				
+				let final = `<div class="table2d">${top}${left}${table}</div>`;
+				$(target).append(final);
+				bindTable2D(final);
+			}
 
 		</script>
 	</body>

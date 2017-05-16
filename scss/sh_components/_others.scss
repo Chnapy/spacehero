@@ -1,0 +1,27 @@
+
+
+.btn-inline {
+	display: inline-block;
+	vertical-align: text-top;
+}
+
+.small-caps {
+	font-variant: small-caps !important;
+}
+
+.module {
+	overflow: auto;
+}
+
+.color-bloc {
+	display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+
+.date {
+	width: $date-width;
+	color: rgba(black, 0.3);
+	text-shadow: none;
+	cursor: default;
+}

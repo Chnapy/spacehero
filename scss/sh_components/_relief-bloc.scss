@@ -1,0 +1,66 @@
+
+
+.relief-bloc {
+	@include relief;
+	margin: .1em;
+	font-variant: small-caps;
+	padding: 0 4px;
+	vertical-align: middle;
+	cursor: default;
+	overflow: hidden;
+    text-overflow: ellipsis;
+	text-align: left;
+	white-space: nowrap;
+
+	&, > .relief-img, > .relief-text {
+		display: inline;
+	}
+
+	> .relief-img {
+		height: 1.25em;
+		width: auto;
+		margin-left: -4px;
+		vertical-align: text-top;
+		@include user-select(none);
+	}
+
+	> .relief-text {
+		padding-left: 4px;
+		font-variant: small-caps;
+		vertical-align: top;
+	}
+
+	&.reduced {
+		padding-right: 0;
+
+		> .relief-text {
+			display: none;
+		}
+
+		&.onhover {
+			&:hover {
+				padding-right: 4px;
+
+				> .relief-text {
+					display: inline;
+				}
+			}
+		}
+	}
+}
+
+.player {
+	display: inline !important;
+	border-left: 3px solid transparent;
+
+	> .relief-img {
+		max-width: 1.25em;
+	}
+}
+
+.faction {
+	> .color-bloc {
+		display: inline-block;
+		width: 1.25em;
+	}
+}

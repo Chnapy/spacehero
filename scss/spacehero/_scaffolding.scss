@@ -1,0 +1,20 @@
+
+
+*:focus {
+    outline-color: transparent !important;
+    outline-style: none !important;
+}
+
+html {
+	font-size: $font-size-base;
+}
+
+html, body {
+	margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}

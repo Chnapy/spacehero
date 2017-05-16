@@ -1,8 +1,35 @@
 
+//Variables and mixins
 @import "spacehero_variables";
+@import "spacehero_sh_variables";
 @import "superhero/superhero_variables";
+@import "spacehero/mixins";
+
+//Bootstrap and Bootswatch
 @import "../bootstrap/stylesheets/bootstrap";
 @import "superhero/superhero_bootswatch";
-@import "topcoat/topcoat";
-@import "tree/tree";
-@import "game";
+
+//Components
+@import "spacehero/newclasses";
+@import "spacehero/scaffolding";
+@import "spacehero/type";
+@import "spacehero/buttons";
+@import "spacehero/checkradio";
+@import "spacehero/forms";
+@import "spacehero/navs";
+@import "spacehero/list-group";
+@import "spacehero/dropdown";
+@import "spacehero/others";
+@import "spacehero/scrollbar";
+
+//SH Components
+@import "sh_components/rows-height";
+@import "sh_components/alignment";
+@import "sh_components/tree";
+@import "sh_components/table2d";
+@import "sh_components/relief-bloc";
+@import "sh_components/resource";
+@import "sh_components/mission";
+@import "sh_components/notification";
+@import "sh_components/chat";
+@import "sh_components/others";

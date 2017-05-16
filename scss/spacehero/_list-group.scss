@@ -1,0 +1,15 @@
+
+
+//ListGroup
+
+.list-group > .list-group-item {
+	padding: $list-group-item-padding;
+
+	&:not(.active):not(.disabled) {
+		@include btnColor($btn-default-bg);
+
+		&:focus {
+			@include focused;
+		}
+	}
+}

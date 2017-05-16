@@ -1,0 +1,98 @@
+
+
+.table2d {
+	position: relative;
+	display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+	height: 100%;
+
+	&-top, &-left {
+		position: absolute;
+		overflow: hidden;
+
+	}
+
+	&-top {
+		left: $table2d-cell-minwidth;
+		right: 0;
+		top: 0;
+		display: block;
+		height: $table2d-cell-minheight;
+		white-space: nowrap;
+
+		.table2d-th:first-child {
+			width: $table2d-cell-minwidth + 1;
+			min-width: $table2d-cell-minwidth + 1;
+		}
+
+		.table2d-th + .table2d-th {
+			border-left: none;
+		}
+	}
+
+	&-left {
+		top: $table2d-cell-minheight;
+		bottom: 0;
+		left: 0;
+		display: inline-block;
+		width: $table2d-cell-minwidth;
+		font-size: 0;
+
+		.table2d-th:first-child {
+			height: $table2d-cell-minheight + 1;
+			min-height: $table2d-cell-minheight + 1;
+		}
+
+		.table2d-th + .table2d-th {
+			border-top: none;
+		}
+	}
+
+	&-table {
+		display: inline-block;
+		margin-left: $table2d-cell-minwidth;
+		margin-top: $table2d-cell-minheight;
+		right: 0;
+		bottom: 0;
+		@if $table2d-cell-minwidth == auto {
+			width: 100%;
+		} @else {
+			width: calc(100% - #{$table2d-cell-minwidth});
+		}
+		@if $table2d-cell-minheight == auto {
+			height: 100%;
+		} @else {
+			height: calc(100% - #{$table2d-cell-minheight});
+		}
+		overflow: auto;
+
+		tr:first-child td {
+			border-top: none;
+		}
+
+		tr td:first-child {
+			border-left: none;
+		}
+	}
+
+	.table2d-th, td, th {
+		width: $table2d-cell-minwidth;
+		height: $table2d-cell-minheight;
+		min-width: $table2d-cell-minwidth;
+		min-height: $table2d-cell-minheight;
+		max-width: $table2d-cell-maxwidth;
+		max-height: $table2d-cell-maxheight;
+		border: 1px solid white;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-align: center;
+		font-size: 1rem;
+	}
+
+	.table2d-th {
+		display: inline-block;
+		background: rgba(50, 0 ,0,0.25);
+	}
+
+}

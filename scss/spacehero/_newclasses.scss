@@ -1,0 +1,49 @@
+
+
+/*New classes*/
+
+.focused {
+	@include focused;
+}
+
+.disabled {
+	@include disabled;
+}
+
+.relief {
+	@include relief($btn-default-bg);
+}
+
+.relief-primary {
+	@include relief($brand-primary);
+}
+
+.t-head {
+
+	&::before {
+		content: '';
+		width: 100%;
+		display: block;
+		position: absolute;
+		left: 0;
+		border-bottom: 1px solid $hr-border;
+		top: 30px;
+	}
+
+	h2, .h2 {
+		background: $body-bg;
+		font-weight: 300;
+		margin: 10px 0 25px;
+		position: relative;
+		display: inline-block;
+		padding-right: 10px;
+	}
+
+	&[class^='col-'], &[class*=' col-']{
+		padding: 0;
+
+		h2, .h2 {
+			padding-left: 15px;
+		}
+	}
+}

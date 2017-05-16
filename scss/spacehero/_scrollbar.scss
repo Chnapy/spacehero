@@ -1,0 +1,59 @@
+
+//Scrollbar
+
+::-webkit-scrollbar {
+	width: 17px;
+	background: rgba(black, 0.1);
+}
+
+::-webkit-scrollbar-button {
+	height: 17px;
+
+/*	&:vertical {
+		&:decrement {
+			border-top: 0px !important;
+		}
+		&:increment {
+			border-bottom: 0px !important;
+		}
+	}
+	&:horizontal {
+		&:decrement {
+			border-left: 0px !important;
+		}
+		&:increment {
+			border-right: 0px !important;
+		}
+	}*/
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track-piece {
+}
+
+::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-corner {
+	background: darken($btn-default-bg, $tc_dark_border);
+}
+
+::-webkit-resizer {
+	@include relief;
+	/*@include btnColor($btn-default-bg);*/
+/*	border-right: none !important;
+	border-bottom: none !important;*/
+	@include box-shadow(inset 0px -2px rgba(white, 0.2));
+}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-button {
+	@include btnColor($btn-default-bg);
+/*	&:vertical {
+		border-right: 0px !important;
+	}
+	&:horizontal {
+		border-bottom: 0px !important;
+	}*/
+}

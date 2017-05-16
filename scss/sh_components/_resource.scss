@@ -1,0 +1,42 @@
+
+
+.resource {
+	white-space: nowrap;
+	vertical-align: middle;
+	margin: .1em;
+	cursor: default;
+
+	@each $c in $resource-colors {
+		&.resource-#{nth($c, 1)} {
+			@include relief(nth($c, 2));
+		}
+	}
+
+	&, > .resource-value, > .resource-name {
+		display: inline;
+	}
+
+	> .resource-value, > .resource-name {
+		padding: {
+			left: 2px;
+			right: 2px;
+		}
+	}
+
+	> .resource-value {
+		background: rgba(black, .25);
+		> .resource-value-current {
+			font-weight: 600;
+		}
+
+		> .resource-value-total {
+			&::before {
+				content: '/';
+			}
+		}
+	}
+
+	> .resource-name {
+		font-weight: 600;
+	}
+}

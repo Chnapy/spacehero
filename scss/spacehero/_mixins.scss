@@ -1,0 +1,55 @@
+
+/*Functions and mixins*/
+
+@function getBorderColor($bg, $lighter: false) {
+	$darken: 0;
+	@if ($bg == $btn-default-bg) or $lighter {
+		$darken:	$tc_dark_border;
+	} @else {
+		$darken:	$tc_darker_border;
+	}
+
+	@return darken($bg, $darken);
+}
+
+@mixin disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+}
+
+@mixin focused {
+	/*border: 1px solid $tc_focus_border !important;*/
+	@include box-shadow(inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px $tc_focus_shadow);
+	outline: 0;
+	z-index: 2;
+}
+
+@mixin relief($bg: $btn-default-bg, $lighter: false) {
+	background: $bg;
+	@include box-shadow(inset 0 1px rgba(white, 0.1));
+	border: 1px solid getBorderColor($bg, $lighter);
+}
+
+@mixin btnColor($bg) {
+	@include relief($bg);
+	text-shadow: 0 -1px getBorderColor($bg);
+
+	&:hover, &:focus, &:active, &:active:focus {
+		border: 1px solid getBorderColor($bg);
+	}
+
+	&:focus {
+		background: $bg;
+		@include focused;
+	}
+
+	&:hover {
+		background: lighten($bg, 3.5%);
+	}
+
+	&:active {
+		background: darken($bg, 13.7%);
+		@include box-shadow(inset 0 1px rgba(0,0,0,0.05) !important);
+	}
+}

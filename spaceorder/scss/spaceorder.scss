@@ -1,7 +1,8 @@
 
 @import "../../scss/spacehero_variables";
+@import "../../scss/spacehero_sh_variables";
 @import "../../bootstrap/stylesheets/bootstrap/variables";
-@import "../../scss/tree/map";
+@import "../../scss/sh_components/table2d";
 
 #mod-faction, #mod-resources {
 	padding-top: 0 !important;
@@ -95,4 +96,8 @@
 			padding-top: 1px;
 		}
 	}
+}
+
+#mod-map {
+	font-size: 0;
 }

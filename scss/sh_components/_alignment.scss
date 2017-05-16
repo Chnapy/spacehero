@@ -1,0 +1,20 @@
+
+
+.center-height-parent {
+	position: relative;
+
+	.center-height-child {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		padding-left: inherit;
+		padding-right: inherit;
+		left: 0;
+		right: 0;
+	}
+}
+
+.center-height-flex {
+	display: flex;
+	align-items: center;
+}
