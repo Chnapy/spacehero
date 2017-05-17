@@ -1,8 +1,11 @@
 
-$table2d-cell-minwidth:					20px !default;
+$table2d-cell-minwidth:					40px !default;
 $table2d-cell-minheight:				$table2d-cell-minwidth !default;
 $table2d-cell-maxwidth:					$table2d-cell-minwidth !default;
 $table2d-cell-maxheight:				$table2d-cell-maxwidth !default;
+$table2d-cell-padding:					$table-cell-padding !default;
+$table2d-bg-axis:						darken($table-bg, 5%) !default;
+$table2d-bg-axis-accent:				darken($table-bg, 2%) !default;
 
 $tree-border:							1px solid $tc_but_border !default;
 $tree-border-color-hover:				$tc_but_border !default;

@@ -82,6 +82,7 @@ $btn-info-border:           darken($brand-info, $tc_dark_border) !default;
 $btn-warning-border:        darken($brand-warning, $tc_dark_border) !default;
 $btn-danger-border:         darken($brand-danger, $tc_dark_border) !default;
 
+$table-bg:					$body-bg !default;
 $table-bg-hover:			lighten($gray-light, 3.5%) !default;
 $table-border-color:		none !default;
 

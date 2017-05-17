@@ -7,77 +7,24 @@ $input-height-small:        23px !default;*/
 /*--*/
 /*$modal-content-bg:						$panel-bg!default;
 $modal-header-border-color:				$panel-default-border!default;*/
-.table2d {
-  position: relative;
-  display: inline-block;
-  max-width: 100%;
-  max-height: 100%;
-  height: 100%; }
-  .table2d-top, .table2d-left {
-    position: absolute;
-    overflow: hidden; }
-  .table2d-top {
-    left: 20px;
-    right: 0;
-    top: 0;
-    display: block;
-    height: 20px;
-    white-space: nowrap; }
-    .table2d-top .table2d-th:first-child {
-      width: 21px;
-      min-width: 21px; }
-    .table2d-top .table2d-th + .table2d-th {
-      border-left: none; }
-  .table2d-left {
-    top: 20px;
-    bottom: 0;
-    left: 0;
-    display: inline-block;
-    width: 20px;
-    font-size: 0; }
-    .table2d-left .table2d-th:first-child {
-      height: 21px;
-      min-height: 21px; }
-    .table2d-left .table2d-th + .table2d-th {
-      border-top: none; }
-  .table2d-table {
-    display: inline-block;
-    margin-left: 20px;
-    margin-top: 20px;
-    right: 0;
-    bottom: 0;
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-    overflow: auto; }
-    .table2d-table tr:first-child td {
-      border-top: none; }
-    .table2d-table tr td:first-child {
-      border-left: none; }
-  .table2d .table2d-th, .table2d td, .table2d th {
-    width: 20px;
-    height: 20px;
-    min-width: 20px;
-    min-height: 20px;
-    max-width: 20px;
-    max-height: 20px;
-    border: 1px solid white;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: center;
-    font-size: 1rem; }
-  .table2d .table2d-th {
-    display: inline-block;
-    background: rgba(50, 0, 0, 0.25); }
-
 #mod-faction, #mod-resources {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   overflow: hidden; }
+  @media (max-width: 991px) {
+    #mod-faction.center-height-parent .center-height-child, #mod-resources.center-height-parent .center-height-child {
+      top: 0;
+      transform: none; }
+    #mod-faction#mod-resources, #mod-resources#mod-resources {
+      border-top: none; } }
 
 #mod-hierarchy .tree {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); }
+  text-align: center; }
+@media (min-width: 992px) {
+  #mod-hierarchy .tree {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); } }
 
 #mod-notif {
   padding: 0; }

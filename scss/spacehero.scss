@@ -1,7 +1,6 @@
 
 //Variables and mixins
 @import "spacehero_variables";
-@import "spacehero_sh_variables";
 @import "superhero/superhero_variables";
 @import "spacehero/mixins";
 
@@ -21,6 +20,9 @@
 @import "spacehero/dropdown";
 @import "spacehero/others";
 @import "spacehero/scrollbar";
+
+//SH Variables
+@import "spacehero_sh_variables";
 
 //SH Components
 @import "sh_components/rows-height";

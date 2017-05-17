@@ -1,20 +1,38 @@
 
 @import "../../scss/spacehero_variables";
-@import "../../scss/spacehero_sh_variables";
+@import "../../scss/superhero/superhero_variables";
 @import "../../bootstrap/stylesheets/bootstrap/variables";
-@import "../../scss/sh_components/table2d";
+@import "../../scss/spacehero_sh_variables";
 
 #mod-faction, #mod-resources {
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
 	overflow: hidden;
+
+	@media (max-width: $screen-sm-max) {
+		&.center-height-parent .center-height-child {
+			top: 0;
+			transform: none;
+		}
+		
+		&#mod-resources {
+			border-top: none;
+		}
+	}
 }
 
 #mod-hierarchy {
+	
 	.tree {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
+		text-align: center;
+	}
+	
+	@media (min-width: $screen-md-min) {
+		.tree {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
 	}
 }
 

@@ -544,7 +544,7 @@
 				$(this).addClass('reduced');
 			});
 			
-			generateTable('#mod-map', 100, 100, function() {
+			generateTable('#mod-map', 80, 20, function() {
 				this.i ? this.i++ : (this.i = 1);
 				return this.i;
 			}, function() {
@@ -588,13 +588,13 @@
 				for (let i = 0; i < height; i++) {
 					table += `<tr>`;
 					for (let j = 0; j < width; j++) {
-						table += `<td></td>`;
+						table += `<td>a</td>`;
 					}
 					table += `</tr>`;
 				}
 				table += `</tbody></table>`;
 				
-				let final = `<div class="table2d">${top}${left}${table}</div>`;
+				let final = `<div class="table2d table2d-stripped">${table}${top}${left}</div>`;
 				$(target).append(final);
 				bindTable2D(final);
 			}
