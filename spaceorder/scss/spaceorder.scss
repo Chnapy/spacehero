@@ -2,7 +2,9 @@
 @import "../../scss/spacehero_variables";
 @import "../../scss/superhero/superhero_variables";
 @import "../../bootstrap/stylesheets/bootstrap/variables";
+@import "../../bootstrap/stylesheets/bootstrap/mixins";
 @import "../../scss/spacehero_sh_variables";
+@import "../../scss/spacehero/mixins";
 
 #mod-faction, #mod-resources {
 	padding-top: 0 !important;
@@ -14,7 +16,7 @@
 			top: 0;
 			transform: none;
 		}
-		
+
 		&#mod-resources {
 			border-top: none;
 		}
@@ -22,11 +24,11 @@
 }
 
 #mod-hierarchy {
-	
+
 	.tree {
 		text-align: center;
 	}
-	
+
 	@media (min-width: $screen-md-min) {
 		.tree {
 			position: absolute;
@@ -118,4 +120,59 @@
 
 #mod-map {
 	font-size: 0;
+}
+
+.increment {
+	font-size: 0;
+
+	> .increment-value {
+		display: inline-block;
+		padding-top: 0;
+		padding-bottom: 0;
+		font-size: 10px;
+		line-height: 1.75;
+		border-right: none;
+		@include box-shadow(none);
+	}
+}
+
+#mod-infos {
+	padding: 0;
+
+	> .panel {
+		background: none;
+		border: none;
+		margin: 0;
+
+		&, > .panel-heading {
+			@include box-shadow(none);
+		}
+
+		> .panel-heading {
+
+		}
+
+		> .panel-body {
+			padding: 0;
+
+			> .nav-tabs > li:first-child > a {
+				border-left: none;
+			}
+
+			> .tab-content {
+				border-left: none;
+				border-right: none;
+
+				.infos-element {
+					padding-left: extract-from-compact($table2d-cell-padding, left);
+					padding-right: extract-from-compact($table2d-cell-padding, right);
+				}
+
+				.infos-actions .alert {
+					display: inline-block;
+				}
+			}
+		}
+
+	}
 }

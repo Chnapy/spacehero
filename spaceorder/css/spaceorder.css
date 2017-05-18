@@ -7,6 +7,7 @@ $input-height-small:        23px !default;*/
 /*--*/
 /*$modal-content-bg:						$panel-bg!default;
 $modal-header-border-color:				$panel-default-border!default;*/
+/*Functions and mixins*/
 #mod-faction, #mod-resources {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -77,5 +78,39 @@ $modal-header-border-color:				$panel-default-border!default;*/
 
 #mod-map {
   font-size: 0; }
+
+.increment {
+  font-size: 0; }
+  .increment > .increment-value {
+    display: inline-block;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 10px;
+    line-height: 1.75;
+    border-right: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+#mod-infos {
+  padding: 0; }
+  #mod-infos > .panel {
+    background: none;
+    border: none;
+    margin: 0; }
+    #mod-infos > .panel, #mod-infos > .panel > .panel-heading {
+      -webkit-box-shadow: none;
+      box-shadow: none; }
+    #mod-infos > .panel > .panel-body {
+      padding: 0; }
+      #mod-infos > .panel > .panel-body > .nav-tabs > li:first-child > a {
+        border-left: none; }
+      #mod-infos > .panel > .panel-body > .tab-content {
+        border-left: none;
+        border-right: none; }
+        #mod-infos > .panel > .panel-body > .tab-content .infos-element {
+          padding-left: 6px;
+          padding-right: 6px; }
+        #mod-infos > .panel > .panel-body > .tab-content .infos-actions .alert {
+          display: inline-block; }
 
 /*# sourceMappingURL=spaceorder.css.map */

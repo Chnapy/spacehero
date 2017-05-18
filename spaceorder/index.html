@@ -189,8 +189,8 @@
 
 				<div id='mod-map' class="col-md-8 row-md-24 relief module">
 
-<!--					Table generated-->
-					
+					<!--					Table generated-->
+
 				</div>
 
 				<div id='mod-hierarchy' class="col-md-2 row-md-24 relief module">
@@ -492,7 +492,167 @@
 				</div>
 
 				<div id='mod-infos' class="col-md-4 row-md-24 relief module">
-					TODO
+
+					<div class="panel">
+
+						<div class="panel-heading">
+							<b>BF23</b>
+							<div class="float-right">
+								contrôlé par <div class='player relief-bloc' title='Poisson' style='border-left-color: #5BC0DE'>
+									<img class='relief-img' src='img/avatar/av2.jpg' alt='Avatar de Poisson'/><!--
+									--><div class='relief-text'>Poisson</div><!--
+									--></div>
+							</div>
+						</div>
+
+						<div class="panel-body">
+
+
+							<ul class="nav nav-tabs">
+
+								<li class="active"><a href="#BF23-P1" data-toggle="tab">Planète</a></li>
+								<li><a href="#BF23-SN1" data-toggle="tab">Satellite naturel</a></li>
+							</ul>
+
+							<div class="tab-content">
+								<div class="tab-pane active in" id="BF23-P1">
+
+									<div class="infos-element">
+										Planète BF23-<b>P1</b>
+										<div class="float-right">
+											Potentiel MO : <b>8.2</b>
+										</div>
+									</div>
+
+									<table class="table table-striped">
+										<tbody>
+											<tr>
+												<td>Colonie</td>
+												<td>
+													<div class="resource resource-danger" title="Vie">
+														<div class="resource-value">
+															<span class="resource-value-current">90</span>
+															<span class="resource-value-total">100</span><!--
+															--></div><!--
+														--><div class="resource-name">V</div><!--
+														--></div>
+												</td>
+												<td>
+													<div class="resource resource-brown" title="Main d'oeuvre">
+														<div class="resource-value">
+															<span class="resource-value-current">50</span><!--
+															--></div><!--
+														--><div class="resource-name">MO</div><!--
+														--></div>
+												</td>
+												<td>
+													<div class="resource resource-turquoise" title="Vitesse de construction">
+														<div class="resource-value">
+															<span class="resource-value-current">25</span><!--
+															--></div><!--
+														--><div class="resource-name">VIT</div><!--
+														--></div>
+												</td>
+												<td>
+													<div class="increment">
+														<span class="increment-value label label-primary">II</span>
+														<button type="button" class="increment-btn btn btn-xs btn-primary">
+															<span class="glyphicon glyphicon-plus"></span>
+														</button>
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>Base militaire</td>
+												<td>
+													<div class="resource resource-danger" title="Vie">
+														<div class="resource-value">
+															<span class="resource-value-current">55</span>
+															<span class="resource-value-total">100</span><!--
+															--></div><!--
+														--><div class="resource-name">V</div><!--
+														--></div>
+												</td>
+												<td>
+													<div class="resource resource-green" title="Militaire">
+														<div class="resource-value">
+															<span class="resource-value-current">40</span><!--
+															--></div><!--
+														--><div class="resource-name">MI</div><!--
+														--></div>
+												</td>
+												<td>
+													<div class="resource resource-info" title="Défense">
+														<div class="resource-value">
+															<span class="resource-value-current">1</span><!--
+															--></div><!--
+														--><div class="resource-name">D</div><!--
+														--></div>
+												</td>
+												<td>
+													<div class="increment">
+														<span class="increment-value label label-primary">I</span>
+														<button type="button" class="increment-btn btn btn-xs btn-primary">
+															<span class="glyphicon glyphicon-plus"></span>
+														</button>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<div class="infos-actions text-center">
+										<div class="alert alert-danger text-center">
+											<h4 class="">
+												Attaque en cours
+											</h4>
+											<p>Construction, réparation et amélioration impossibles</p>
+										</div>
+									</div>
+
+								</div>
+								<div class="tab-pane" id="BF23-SN1">
+
+								</div>
+							</div>
+
+						</div>
+
+						<div class="panel-footer">
+
+							Total
+							<div class="float-right">
+								<div class="resource resource-brown" title="Main d'oeuvre">
+									<div class="resource-value">
+										<span class="resource-value-current">50</span><!--
+										--></div><!--
+									--><div class="resource-name">MO</div><!--
+									--></div>
+								<div class="resource resource-turquoise" title="Vitesse de construction">
+									<div class="resource-value">
+										<span class="resource-value-current">25</span><!--
+										--></div><!--
+									--><div class="resource-name">VIT</div><!--
+									--></div>
+								<div class="resource resource-green" title="Militaire">
+									<div class="resource-value">
+										<span class="resource-value-current">40</span><!--
+										--></div><!--
+									--><div class="resource-name">MI</div><!--
+									--></div>
+								<div class="resource resource-info" title="Défense">
+									<div class="resource-value">
+										<span class="resource-value-current">1</span><!--
+										--></div><!--
+									--><div class="resource-name">D</div><!--
+									--></div>
+							</div>
+
+						</div>
+
+					</div>
+
 				</div>
 
 				<div id='mod-actions' class="col-md-4 row-md-24 relief module">
@@ -543,20 +703,20 @@
 			$('.mission').on('hide.bs.collapse', function () {
 				$(this).addClass('reduced');
 			});
-			
-			generateTable('#mod-map', 80, 20, function() {
+
+			generateTable('#mod-map', 80, 20, function () {
 				this.i ? this.i++ : (this.i = 1);
 				return this.i;
-			}, function() {
+			}, function () {
 				this.j ? this.j++ : (this.j = 1);
 				return this.j;
 			});
 
 			//Table 2D
 			$('.table2d').each((i, t2d) => bindTable2D(t2d));
-			
+
 			function bindTable2D(t2d) {
-				
+
 				let table = $(t2d).find('.table2d-table');
 				let top = $(t2d).find('.table2d-top');
 				let left = $(t2d).find('.table2d-left');
@@ -593,7 +753,7 @@
 					table += `</tr>`;
 				}
 				table += `</tbody></table>`;
-				
+
 				let final = `<div class="table2d table2d-stripped">${table}${top}${left}</div>`;
 				$(target).append(final);
 				bindTable2D(final);
