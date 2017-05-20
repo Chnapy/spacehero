@@ -8360,9 +8360,9 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
     height: calc(100% - 52px);
     overflow: auto; }
     .table2d-table tr:first-child td {
-      border-top: none; }
+      border-top: none !important; }
     .table2d-table tr td:first-child {
-      border-left: none; }
+      border-left: none !important; }
   .table2d .table2d-th, .table2d td, .table2d th {
     width: 40px;
     height: 52px;
@@ -8558,24 +8558,43 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
 .mission.mission-state-fail .panel-heading {
   border-left-color: #c0392b; }
 
-.notification-group > .notification {
+.notification, .timeline > .timeline-item {
   white-space: nowrap; }
-  .notification-group > .notification > .content {
+  .notification > .content, .timeline > .timeline-item > .content {
     display: inline-block;
     white-space: normal;
     word-break: break-word;
     width: calc(100% - 1.3em); }
-  .notification-group > .notification > .date {
+  .notification > .date, .timeline > .timeline-item > .date {
     display: inline-block;
     vertical-align: top;
     text-align: right; }
+
+.timeline > .timeline-item {
+  display: block;
+  padding-bottom: 5px; }
+  .timeline > .timeline-item:not(.timeline-item-out) {
+    margin-left: 5px;
+    padding-left: 5px;
+    border-left: 1px solid rgba(0, 0, 0, 0.25); }
+  .timeline > .timeline-item:first-child {
+    padding-top: 5px; }
+.timeline > .timeline-date {
+  display: inline-block;
+  min-width: 10px;
+  color: #c6c8c8;
+  background: rgba(0, 0, 0, 0.25);
+  padding-left: 5px;
+  padding-right: 5px; }
+  .timeline > .timeline-date + .timeline-item {
+    padding-top: 5px; }
 
 .chat > .chat-post {
   white-space: nowrap; }
   .chat > .chat-post > .chat-post-content {
     display: inline-block;
     white-space: normal;
-    word-break: break-word;
+    word-break: break-all;
     width: calc(100% - 1.3em); }
   .chat > .chat-post > .date {
     display: inline-block;

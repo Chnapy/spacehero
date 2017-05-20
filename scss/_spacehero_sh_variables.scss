@@ -14,6 +14,12 @@ $tree-padding-top:						10px !default;
 $tree-padding-side:						2.5px !default;
 $tree-sub-margin-left:					30px !default;
 
+$timeline-line-color:					rgba(black, .25) !default;
+$timeline-left:							5px !default;
+$timeline-padding-left:					5px !default;
+$timeline-padding-top:					5px !default;
+$timeline-date-color:					$btn-default-color !default;
+
 $resource-colors:						"default" $btn-default-bg,
 										"primary" $brand-primary,
 										"success" $brand-success,

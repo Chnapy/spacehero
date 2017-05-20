@@ -83,11 +83,11 @@
 		overflow: auto;
 
 		tr:first-child td {
-			border-top: none;
+			border-top: none !important;
 		}
 
 		tr td:first-child {
-			border-left: none;
+			border-left: none !important;
 		}
 	}
 

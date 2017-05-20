@@ -656,7 +656,101 @@
 				</div>
 
 				<div id='mod-actions' class="col-md-4 row-md-24 relief module">
-					TODO
+					<div class="panel">
+
+						<div class="panel-heading">
+							<div>
+								<span class="label label-danger small-caps">Attaque en cours</span>
+								<div class="float-right">
+									par <div class='player relief-bloc' title='Poisson' style='border-left-color: #5BC0DE'>
+										<img class='relief-img' src='img/avatar/av2.jpg' alt='Avatar de Poisson'/><!--
+										--><div class='relief-text'>Poisson</div><!--
+										--></div>
+								</div>
+							</div>
+							<div>
+								<span class="label label-default small-caps">Appel</span>
+								- 12 attaquants
+							</div>
+						</div>
+
+						<div class="panel-body">
+							<div>
+								<span class="label label-info small-caps">Défense</span>
+
+								<div class="resource resource-green" title="Militaire">
+									<div class="resource-value">
+										<span class="resource-value-current">25</span><!--
+										--></div><!--
+									--><div class="resource-name">MI</div><!--
+									--></div>
+
+								<div class="resource resource-info" title="Défense">
+									<div class="resource-value">
+										<span class="resource-value-current">1</span><!--
+										--></div><!--
+									--><div class="resource-name">D</div><!--
+									--></div>
+							</div>
+							<div>
+								2 défenseurs 
+								<button class='btn btn-xs btn-inline btn-primary'>Rejoindre</button>
+							</div>
+						</div>
+
+						<div class="panel-footer">
+
+							<div class="timeline">
+								<div class='timeline-item timeline-item-out'>
+									<div class="content">
+										Début de l'attaque
+									</div>
+									<div class='date' title='05/05/2017'>3j</div>
+								</div>
+								<div class="timeline-date">
+									06/05/2017
+								</div>
+								<div class='timeline-item'>
+									<div class="content">
+										<div class='player relief-bloc' title='Choux-Fleur' style='border-left-color: #5BC0DE'>
+											<img class='relief-img' src='img/avatar/av1.png' alt='Avatar de Choux-Fleur'/><!--
+											--><div class='relief-text'>Choux-Fleur</div><!--
+											--></div>
+										a rejoint la défense 
+
+										<div class="resource resource-green" title="Militaire">
+											<div class="resource-value">
+												<span class="resource-value-current">15</span><!--
+												--></div><!--
+											--><div class="resource-name">MI</div><!--
+											--></div>
+									</div>
+									<div class='date' title='05/05/2017'>2j</div>
+								</div>
+								<div class="timeline-date">
+									05/05/2017
+								</div>
+								<div class='timeline-item'>
+									<div class="content">
+										<div class='player relief-bloc' title='Tortue' style='border-left-color: #5BC0DE'>
+											<img class='relief-img' src='img/avatar/av2.jpg' alt='Avatar de Tortue'/><!--
+											--><div class='relief-text'>Tortue</div><!--
+											--></div>
+										a rejoint la défense 
+
+										<div class="resource resource-green" title="Militaire">
+											<div class="resource-value">
+												<span class="resource-value-current">10</span><!--
+												--></div><!--
+											--><div class="resource-name">MI</div><!--
+											--></div>
+									</div>
+									<div class='date' title='05/05/2017'>3j</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
 				</div>
 
 				<div id='mod-notif' class="col-md-2 row-md-24 relief module">
@@ -754,7 +848,7 @@
 				}
 				table += `</tbody></table>`;
 
-				let final = `<div class="table2d table2d-stripped">${table}${top}${left}</div>`;
+				let final = `<div id="carte-table2d" class="table2d table2d-stripped">${table}${top}${left}</div>`;
 				$(target).append(final);
 				bindTable2D(final);
 			}

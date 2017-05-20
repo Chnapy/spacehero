@@ -91,26 +91,54 @@ $modal-header-border-color:				$panel-default-border!default;*/
     -webkit-box-shadow: none;
     box-shadow: none; }
 
-#mod-infos {
+#mod-infos, #mod-actions {
   padding: 0; }
-  #mod-infos > .panel {
+  #mod-infos > .panel, #mod-actions > .panel {
+    height: 100%;
     background: none;
     border: none;
     margin: 0; }
-    #mod-infos > .panel, #mod-infos > .panel > .panel-heading {
+    #mod-infos > .panel, #mod-infos > .panel > .panel-heading, #mod-actions > .panel, #mod-actions > .panel > .panel-heading {
       -webkit-box-shadow: none;
       box-shadow: none; }
-    #mod-infos > .panel > .panel-body {
-      padding: 0; }
-      #mod-infos > .panel > .panel-body > .nav-tabs > li:first-child > a {
-        border-left: none; }
-      #mod-infos > .panel > .panel-body > .tab-content {
-        border-left: none;
-        border-right: none; }
-        #mod-infos > .panel > .panel-body > .tab-content .infos-element {
-          padding-left: 6px;
-          padding-right: 6px; }
-        #mod-infos > .panel > .panel-body > .tab-content .infos-actions .alert {
-          display: inline-block; }
+    #mod-infos > .panel > .panel-footer, #mod-actions > .panel > .panel-footer {
+      background-color: #3f4142;
+      border-top: 1px solid #2b2d2e; }
+
+#mod-infos > .panel > .panel-heading, #mod-infos > .panel > .panel-footer {
+  height: 30px; }
+#mod-infos > .panel > .panel-body {
+  height: calc(100% - 60px);
+  padding: 0;
+  overflow-y: auto; }
+  #mod-infos > .panel > .panel-body > .nav-tabs > li:first-child > a {
+    border-left: none; }
+  #mod-infos > .panel > .panel-body > .tab-content {
+    /*height: 100%;*/
+    border-left: none;
+    border-right: none; }
+    #mod-infos > .panel > .panel-body > .tab-content .infos-element {
+      padding-left: 6px;
+      padding-right: 6px; }
+    #mod-infos > .panel > .panel-body > .tab-content .infos-actions .alert {
+      display: inline-block; }
+
+#carte-table2d .table2d-table {
+  background: url("../img/carte/carte-bg.jpg");
+  background-size: cover; }
+  #carte-table2d .table2d-table td {
+    background: none;
+    border: 1px solid #3f4142; }
+
+#mod-actions .panel-heading div + div, #mod-actions .panel-body div + div {
+  margin-top: 5px; }
+#mod-actions .panel-heading {
+  height: 54px; }
+#mod-actions .panel-body {
+  height: 55px;
+  border-top: 1px solid #2b2d2e; }
+#mod-actions .panel-footer {
+  height: calc(100% - 109px);
+  overflow-y: auto; }
 
 /*# sourceMappingURL=spaceorder.css.map */

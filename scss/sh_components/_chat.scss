@@ -7,7 +7,7 @@
 		> .chat-post-content {
 			display: inline-block;
 			white-space: normal;
-			word-break: break-word;
+			word-break: break-all;
 			width: calc(100% - #{$date-width});
 		}
 		> .date {

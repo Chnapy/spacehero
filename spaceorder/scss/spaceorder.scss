@@ -136,10 +136,11 @@
 	}
 }
 
-#mod-infos {
+#mod-infos, #mod-actions {
 	padding: 0;
 
 	> .panel {
+		height: 100%;
 		background: none;
 		border: none;
 		margin: 0;
@@ -147,19 +148,35 @@
 		&, > .panel-heading {
 			@include box-shadow(none);
 		}
+		
+		> .panel-footer {
+			background-color: $body-bg;
+			border-top: 1px solid $nav-tabs-border-color;
+		}
+	}
+}
 
-		> .panel-heading {
+#mod-infos {
 
+	$pad-height: 30px;
+
+	> .panel {
+
+		> .panel-heading, > .panel-footer {
+			height: $pad-height;
 		}
 
 		> .panel-body {
+			height: calc(100% - #{2 * $pad-height});
 			padding: 0;
+			overflow-y: auto;
 
 			> .nav-tabs > li:first-child > a {
 				border-left: none;
 			}
 
 			> .tab-content {
+				/*height: 100%;*/
 				border-left: none;
 				border-right: none;
 
@@ -175,4 +192,43 @@
 		}
 
 	}
+}
+
+#carte-table2d {
+	.table2d-table {
+		background: url('../img/carte/carte-bg.jpg');
+		background-size: cover;
+
+		td {
+			background: none;
+			border: 1px solid $table-bg;
+		}
+	}
+}
+
+#mod-actions {
+	
+	$head-height: 54px;
+	$body-height: 55px;
+	
+	.panel-heading, .panel-body {
+		div + div {
+			margin-top: 5px;
+		}
+	}
+	
+	.panel-heading {
+		height: $head-height;
+	}
+
+	.panel-body {
+		height: $body-height;
+		border-top: 1px solid $nav-tabs-border-color; 
+	}
+	
+	.panel-footer {
+		height: calc(100% - #{$head-height + $body-height});
+		overflow-y: auto;
+	}
+	
 }
