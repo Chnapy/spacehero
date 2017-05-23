@@ -10,6 +10,11 @@
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
 	overflow: hidden;
+	
+	> .center-height-child {
+		padding-left: 0;
+		padding-right: 0;
+	}
 
 	@media (max-width: $screen-sm-max) {
 		&.center-height-parent .center-height-child {
@@ -55,29 +60,27 @@
 }
 
 #mod-chat {
+
+	$chat-height-top: 21px;
+	$chat-height-bottom: $input-height-small;
+
 	padding: 0;
-	padding-top: 20px;
-	padding-bottom: $input-height-small;
-	overflow: hidden;
 
 	.nav-tabs {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
 
 		> li {
 			&, &.active, &:not(.active) {
 				> a, > a:hover, > a:focus {
 					border-top: none;
 					border-left: none;
+					height: $chat-height-top;
 				}
 			}
 		}
 	}
 
 	.tab-content {
-		max-height: 100%;
+		height: calc(100% - #{$chat-height-top + $chat-height-bottom});
 		overflow: auto;
 		border-left: none;
 		border-right: none;
@@ -100,10 +103,7 @@
 	}
 
 	.input-group {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
+		height: $chat-height-bottom;
 
 		input.form-control {
 			border-bottom: none;
@@ -119,6 +119,7 @@
 }
 
 #mod-map {
+	padding: 0;
 	font-size: 0;
 }
 
@@ -148,10 +149,9 @@
 		&, > .panel-heading {
 			@include box-shadow(none);
 		}
-		
+
 		> .panel-footer {
 			background-color: $body-bg;
-			border-top: 1px solid $nav-tabs-border-color;
 		}
 	}
 }
@@ -171,12 +171,20 @@
 			padding: 0;
 			overflow-y: auto;
 
-			> .nav-tabs > li:first-child > a {
-				border-left: none;
+			$tabs-height: 21px;
+
+			> .nav-tabs {
+				> li > a {
+					height: $tabs-height;
+				}
+				> li:first-child > a {
+					border-left: none;
+				}
 			}
 
 			> .tab-content {
-				/*height: 100%;*/
+				height: calc(100% - #{$tabs-height});
+				overflow-y: auto;
 				border-left: none;
 				border-right: none;
 
@@ -207,16 +215,16 @@
 }
 
 #mod-actions {
-	
+
 	$head-height: 54px;
 	$body-height: 55px;
-	
+
 	.panel-heading, .panel-body {
 		div + div {
 			margin-top: 5px;
 		}
 	}
-	
+
 	.panel-heading {
 		height: $head-height;
 	}
@@ -225,10 +233,11 @@
 		height: $body-height;
 		border-top: 1px solid $nav-tabs-border-color; 
 	}
-	
+
 	.panel-footer {
 		height: calc(100% - #{$head-height + $body-height});
 		overflow-y: auto;
+		border-top: 1px solid $nav-tabs-border-color;
 	}
-	
+
 }

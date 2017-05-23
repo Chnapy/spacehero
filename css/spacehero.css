@@ -8606,7 +8606,8 @@ fieldset[disabled] .btn, fieldset[disabled] .form-control {
   vertical-align: text-top; }
 
 .small-caps {
-  font-variant: small-caps !important; }
+  font-variant: small-caps !important;
+  font-weight: normal; }
 
 .module {
   overflow: auto; }

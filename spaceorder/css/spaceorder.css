@@ -12,6 +12,9 @@ $modal-header-border-color:				$panel-default-border!default;*/
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   overflow: hidden; }
+  #mod-faction > .center-height-child, #mod-resources > .center-height-child {
+    padding-left: 0;
+    padding-right: 0; }
   @media (max-width: 991px) {
     #mod-faction.center-height-parent .center-height-child, #mod-resources.center-height-parent .center-height-child {
       top: 0;
@@ -36,20 +39,13 @@ $modal-header-border-color:				$panel-default-border!default;*/
       border-top: none; }
 
 #mod-chat {
-  padding: 0;
-  padding-top: 20px;
-  padding-bottom: 23px;
-  overflow: hidden; }
-  #mod-chat .nav-tabs {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0; }
-    #mod-chat .nav-tabs > li > a, #mod-chat .nav-tabs > li > a:hover, #mod-chat .nav-tabs > li > a:focus, #mod-chat .nav-tabs > li.active > a, #mod-chat .nav-tabs > li.active > a:hover, #mod-chat .nav-tabs > li.active > a:focus, #mod-chat .nav-tabs > li:not(.active) > a, #mod-chat .nav-tabs > li:not(.active) > a:hover, #mod-chat .nav-tabs > li:not(.active) > a:focus {
-      border-top: none;
-      border-left: none; }
+  padding: 0; }
+  #mod-chat .nav-tabs > li > a, #mod-chat .nav-tabs > li > a:hover, #mod-chat .nav-tabs > li > a:focus, #mod-chat .nav-tabs > li.active > a, #mod-chat .nav-tabs > li.active > a:hover, #mod-chat .nav-tabs > li.active > a:focus, #mod-chat .nav-tabs > li:not(.active) > a, #mod-chat .nav-tabs > li:not(.active) > a:hover, #mod-chat .nav-tabs > li:not(.active) > a:focus {
+    border-top: none;
+    border-left: none;
+    height: 21px; }
   #mod-chat .tab-content {
-    max-height: 100%;
+    height: calc(100% - 44px);
     overflow: auto;
     border-left: none;
     border-right: none;
@@ -64,10 +60,7 @@ $modal-header-border-color:				$panel-default-border!default;*/
           -webkit-box-shadow: none;
           box-shadow: none; }
   #mod-chat .input-group {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0; }
+    height: 23px; }
     #mod-chat .input-group input.form-control {
       border-bottom: none;
       border-left: none; }
@@ -77,6 +70,7 @@ $modal-header-border-color:				$panel-default-border!default;*/
       padding-top: 1px; }
 
 #mod-map {
+  padding: 0;
   font-size: 0; }
 
 .increment {
@@ -102,8 +96,7 @@ $modal-header-border-color:				$panel-default-border!default;*/
       -webkit-box-shadow: none;
       box-shadow: none; }
     #mod-infos > .panel > .panel-footer, #mod-actions > .panel > .panel-footer {
-      background-color: #3f4142;
-      border-top: 1px solid #2b2d2e; }
+      background-color: #3f4142; }
 
 #mod-infos > .panel > .panel-heading, #mod-infos > .panel > .panel-footer {
   height: 30px; }
@@ -111,10 +104,13 @@ $modal-header-border-color:				$panel-default-border!default;*/
   height: calc(100% - 60px);
   padding: 0;
   overflow-y: auto; }
+  #mod-infos > .panel > .panel-body > .nav-tabs > li > a {
+    height: 21px; }
   #mod-infos > .panel > .panel-body > .nav-tabs > li:first-child > a {
     border-left: none; }
   #mod-infos > .panel > .panel-body > .tab-content {
-    /*height: 100%;*/
+    height: calc(100% - 21px);
+    overflow-y: auto;
     border-left: none;
     border-right: none; }
     #mod-infos > .panel > .panel-body > .tab-content .infos-element {
@@ -139,6 +135,7 @@ $modal-header-border-color:				$panel-default-border!default;*/
   border-top: 1px solid #2b2d2e; }
 #mod-actions .panel-footer {
   height: calc(100% - 109px);
-  overflow-y: auto; }
+  overflow-y: auto;
+  border-top: 1px solid #2b2d2e; }
 
 /*# sourceMappingURL=spaceorder.css.map */
